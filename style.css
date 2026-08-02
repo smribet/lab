@@ -387,8 +387,31 @@ html.dark .nbc-team-card {
   grid-template-columns: minmax(15rem, 18rem) minmax(0, 1fr);
   gap: 2.5rem;
 }
-.nbc-user-program-row .nbc-resource-copy {
+.nbc-funding-row {
+  width: calc(100% + 10rem);
+  grid-template-columns: minmax(15rem, 18rem) minmax(0, 1fr);
+  gap: 2.5rem;
+}
+.nbc-user-program-row .nbc-resource-copy,
+.nbc-funding-row .nbc-resource-copy {
   max-width: 46rem;
+}
+.nbc-funding-row .nbc-resource-copy h3 {
+  margin-top: 0;
+}
+.nbc-funding-institution {
+  color: var(--nbc-accent);
+  font-weight: 500;
+}
+.nbc-funding-logos {
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  align-items: start;
+  justify-items: center;
+  gap: 0.75rem;
+}
+.nbc-funding-logos img {
+  max-height: 9rem;
 }
 .nbc-user-highlights-grid {
   display: grid;
@@ -498,6 +521,9 @@ html.dark .nbc-user-highlight-card {
     gap: 1rem;
   }
   .nbc-user-program-row {
+    width: 100%;
+  }
+  .nbc-funding-row {
     width: 100%;
   }
   .nbc-user-highlights-grid {

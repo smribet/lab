@@ -23,6 +23,7 @@ project:
     - file: users.md
     - file: publications.md
     - file: resources.md
+    - file: funding.md
 site:
   template: book-theme
   title: Ribet Research 
@@ -43,3 +44,5 @@ site:
       url: /publications
     - title: Resources
       url: /resources
+    - title: Funding
+      url: /funding

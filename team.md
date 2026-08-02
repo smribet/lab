@@ -50,6 +50,39 @@ Building on this research, she continued at Berkeley Lab as a postdoc working wi
 
 ---
 
+## Graduate Students
+
+::::{div}
+:class: nbc-team-grid
+
+:::{div}
+:class: nbc-team-card
+
+```{image} assets/people/Madelyn.jpg
+:alt: Madelyn Payne
+:class: nbc-team-photo
+```
+
+### Madelyn Payne
+
+:::
+
+:::{div}
+:class: nbc-team-card
+
+```{image} assets/people/Dongin.jpg
+:alt: Dongin Jung
+:class: nbc-team-photo
+```
+
+### Dongin Jung
+
+:::
+
+::::
+
+---
+
 ## Alumni
 
 ::::{div}

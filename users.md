@@ -23,9 +23,7 @@ site:
 :::{div}
 :class: nbc-resource-copy
 
-**Interested in working with us?** The [Molecular Foundry](https://foundry.lbl.gov/) is a Department of Energy nanoscience user facility that provides researchers with access to advanced electron microscopy instrumentation and scientific expertise. Through its [User Program](https://foundry.lbl.gov/user-program/user-program-overview/), access is free for non-proprietary research and awarded through a competitive, peer-reviewed proposal process.
-
-Feel free to reach out to [Stephanie Ribet](./team.md) if you are interested in learning more about user opportunities and working with our group.
+**Interested in working with us?** The National Center for Electron Microscopy is within the [Molecular Foundry](https://foundry.lbl.gov/), which is a Department of Energy nanoscience user facility that provides researchers with access to advanced instrumentation and scientific expertise. Through its [User Program](https://foundry.lbl.gov/user-program/user-program-overview/), access is free for non-proprietary research and awarded through a competitive, peer-reviewed proposal process.  Feel free to reach out to [Stephanie Ribet](./team.md) if you are interested in learning more about user opportunities and workign with our team.
 
 :::
 
