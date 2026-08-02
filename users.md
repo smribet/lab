@@ -42,6 +42,24 @@ Feel free to reach out to [Stephanie Ribet](./team.md) if you are interested in 
 :::{div}
 :class: nbc-user-highlight-image
 
+```{image} assets/user_highlights/turkey_bone.png
+:alt: Graphical abstract showing elemental mapping, 4D-STEM mineral mapping, and in situ tensile testing of individual mineralized collagen fibrils
+```
+
+:::
+
+Combining EDS, 4D-STEM, and in situ TEM tensile testing reveals the nanoscale composition, crystallographic organization, and mechanical response of individual mineralized collagen fibrils extracted from turkey leg tendon, connecting bone’s hierarchical ultrastructure to its strength and toughness.
+
+T. Kochetkova et al., “[Structural and Mechanical Analysis of Individual Mineralized Collagen Fibrils Using In Situ Transmission Electron Microscopy](https://doi.org/10.1021/acsnano.6c00964),” *ACS Nano* **20**, 10127–10137 (2026). [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+::::
+
+::::{div}
+:class: nbc-user-highlight-card
+
+:::{div}
+:class: nbc-user-highlight-image
+
 ```{image} assets/user_highlights/bubble_highlight.png
 :alt: Virtual dark-field and dilation maps showing argon bubbles and strain in amorphous bismuth oxide
 ```
@@ -58,31 +76,17 @@ E. Kennedy\* and S. M. Ribet\* et al., “[Mapping strain and structural heterog
 :class: nbc-user-highlight-card
 
 :::{div}
-:class: nbc-user-highlight-image-placeholder
+:class: nbc-user-highlight-image
 
-Image coming soon
-
-:::
-
-*Two-sentence user highlight coming soon.*
-
-*Paper citation and link coming soon.*
-
-::::
-
-::::{div}
-:class: nbc-user-highlight-card
-
-:::{div}
-:class: nbc-user-highlight-image-placeholder
-
-Image coming soon
+```{image} assets/user_highlights/BN_defects.png
+:alt: Electron ptychography reconstructions of boron-terminated tetravacancies in monolayer hBN
+```
 
 :::
 
-*Two-sentence user highlight coming soon.*
+High-dose STEM irradiation forms boron-terminated tetravacancies in monolayer hBN, creating triangular nanopores with potential technological applications. STEM and EELS identify their edge chemistry, while electron ptychography provides high-contrast images that reveal structural relaxation and enhanced electron density associated with bonding.
 
-*Paper citation and link coming soon.*
+D. O. Byrne et al., “[Fabrication and characterization of boron-terminated tetravacancies in monolayer hBN using STEM, EELS and electron ptychography](https://doi.org/10.1016/j.ultramic.2025.114305),” *Ultramicroscopy*, 114305 (2025).
 
 ::::
 

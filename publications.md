@@ -6,7 +6,6 @@ title: Publications
 
 [View a full publication record on Google Scholar](https://scholar.google.com/citations?user=g2-jjNwAAAAJ&hl=en&oi=ao).
 
-An asterisk (*) denotes equal contribution.
 
 ## 2026
 
