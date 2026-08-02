@@ -51,9 +51,9 @@ html.dark {
   background-color: var(--nbc-highlight-soft) !important;
 }
 
-/* On desktop, lay every course page out as a scrollable row of tabs beneath
-   the site title and controls. The explicit sidebar rule also covers a dev
-   server that has retained an older copy of the MyST layout configuration. */
+/* On desktop, place the primary page tabs beside the site title. The explicit
+   sidebar rule also covers a dev server that has retained an older copy of the
+   MyST layout configuration. */
 @media (min-width: 1024px) {
   .myst-primary-sidebar {
     display: none !important;
@@ -62,7 +62,7 @@ html.dark {
   .myst-top-nav-bar {
     display: grid !important;
     grid-template-columns: auto minmax(0, 1fr) auto auto;
-    row-gap: 0.45rem;
+    column-gap: 0.5rem;
   }
   .myst-top-nav-bar > :first-child {
     grid-column: 1;
@@ -73,11 +73,13 @@ html.dark {
   }
   .myst-top-nav-bar > :last-child > :first-child {
     display: flex !important;
-    grid-column: 1 / -1;
-    grid-row: 2;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    justify-self: start;
     gap: 0.25rem;
     overflow-x: auto;
-    padding: 0.15rem 0 0.25rem 0.65rem;
+    padding: 0;
     scrollbar-width: thin;
     white-space: nowrap;
   }

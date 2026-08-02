@@ -22,7 +22,6 @@ project:
     - file: team.md
     - file: users.md
     - file: publications.md
-    - file: agenda.md
     - file: resources.md
 site:
   template: book-theme
