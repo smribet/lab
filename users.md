@@ -50,7 +50,7 @@ Feel free to reach out to [Stephanie Ribet](./team.md) if you are interested in 
 
 Combining EDS, 4D-STEM, and in situ TEM tensile testing reveals the nanoscale composition, crystallographic organization, and mechanical response of individual mineralized collagen fibrils extracted from turkey leg tendon, connecting bone’s hierarchical ultrastructure to its strength and toughness.
 
-T. Kochetkova et al., “[Structural and Mechanical Analysis of Individual Mineralized Collagen Fibrils Using In Situ Transmission Electron Microscopy](https://doi.org/10.1021/acsnano.6c00964),” *ACS Nano* **20**, 10127–10137 (2026). [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+T. Kochetkova et al., “[Structural and Mechanical Analysis of Individual Mineralized Collagen Fibrils Using In Situ Transmission Electron Microscopy](https://doi.org/10.1021/acsnano.6c00964),” *ACS Nano* **20**, 10127–10137 (2026).
 
 ::::
 
