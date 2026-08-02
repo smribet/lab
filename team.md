@@ -20,6 +20,13 @@ site:
 ### Stephanie M. Ribet
 
 :::{div}
+:class: nbc-team-contact
+
+**Contact:** sribet [at] lbl\.gov
+
+:::
+
+:::{div}
 :class: nbc-team-links
 
 [LinkedIn](https://www.linkedin.com/in/stephanie-ribet-031a63103/) [GitHub](https://github.com/smribet) [Google Scholar](https://scholar.google.com/citations?user=g2-jjNwAAAAJ&hl=en)

@@ -44,7 +44,7 @@ An asterisk (*) denotes equal contribution.
 
 ## 2024
 
-29. G. Varnavides, S. M. Ribet, C. Ophus, “Tilt-Corrected BF-STEM” [*Elemental Microscopy*](https://www.elementalmicroscopy.com/articles/EM000002), 2024.
+29. G. Varnavides, S. M. Ribet, C. Ophus, “Tilt-Corrected BF-STEM” [*Elemental Microscopy*,](https://www.elementalmicroscopy.com/articles/EM000002) 2024.
 30. E. Kennedy, J. Valdez, Y. Wang, S. M. Ribet, K. Sickafus, C. Kreller, B. Uberuaga, B. Derby, “Insights into defect kinetics, mass transport, and electronic structure from spectrum effects in ion-irradiated Bi<sub>2</sub>O<sub>3</sub>” [*J. Mater. Chem. A*](https://pubs.rsc.org/en/content/articlelanding/2024/ta/d4ta05283h), 12 (31445), 2024.
 31. S. P. Gleason, A. Rakowski, S. M. Ribet, S. E. Zeltmann, B. H. Savitzky, M. Henderson, J. Ciston, C. Ophus, “Random forest prediction of crystal structure from electron diffraction patterns incorporating multiple scattering” [*Phys. Rev. Mater.*](https://doi.org/10.1103/PhysRevMaterials.8.093802), 8 (093802), 2024.
 32. B. Küçükoğlu, I. Mohammed, R. C. Guerrero-Ferreira, S. M. Ribet, G. Varnavides, M. L. Leidl, K. Lau, S. Nazarov, A. Myasnikov, M. Kube, J. Radecke, C. Sachse, K. Müller-Caspary, C. Ophus, H. Stahlberg, “Low-dose cryo-electron ptychography of proteins at sub-nanometer resolution” [*Nat. Commun.*](https://doi.org/10.1038/s41467-024-52403-5), 15 (8062), 2024.

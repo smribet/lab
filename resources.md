@@ -10,16 +10,20 @@ title: Resources
 :class: nbc-resource-row
 
 :::{div}
-:class: nbc-resource-image-placeholder
+:class: nbc-resource-image
 
-Image coming soon
+```{image} assets/resources/quantem.webp
+:alt: quantEM logo
+```
 
 :::
 
 :::{div}
 :class: nbc-resource-copy
 
-*A description of quantEM will be added here.*
+**quantEM** is a quantitative electron microscopy data analysis toolkit built on PyTorch. It brings together tools for reconstructing or analyzing a wide range of transmission electron microscopy (TEM) techniques, including nanobeam diffraction, phase retrieval, real-space imaging and tomography, spectroscopy, and related analyses within a consistent, GPU-accelerated API.
+
+**Links:** [Source code](https://github.com/electronmicroscopy/quantem) · [Tutorials](https://github.com/electronmicroscopy/quantem-tutorials)
 
 :::
 
@@ -31,16 +35,20 @@ Image coming soon
 :class: nbc-resource-row
 
 :::{div}
-:class: nbc-resource-image-placeholder
+:class: nbc-resource-image
 
-Image coming soon
+```{image} assets/resources/py4DSTEM.png
+:alt: py4DSTEM logo
+```
 
 :::
 
 :::{div}
 :class: nbc-resource-copy
 
-*A description of py4DSTEM will be added here.*
+**py4DSTEM** is an open-source set of Python tools for processing and analysis of four-dimensional scanning transmission electron microscopy (4D-STEM) data including tools for nanobeam and large convergence angle diffraction data. 
+
+**Links:** [Source code](https://github.com/py4dstem/py4DSTEM) · [Tutorials](https://github.com/py4dstem/py4DSTEM_tutorials)
 
 :::
 
