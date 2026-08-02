@@ -2,23 +2,25 @@
    nanobeam-course — custom theming on top of MyST book-theme.
    Loaded via `site.options.style` in myst.yml.
 
-   Brand color: PMS 7474 / RGB 0 118 129 / #007681.
-   Highlight: PMS 7489 / RGB 116 170 80 / #74AA50.
+   Light-mode brand: deep blue / RGB 0 63 92 / #003F5C.
+   Dark-mode accent: normalized RGB (0, 0.7, 1) / #00B3FF.
+   Light-mode highlight: PMS 7459 / RGB 66 152 181 / #4298B5.
+   Dark-mode highlight: deep blue / #2D6F91.
    Lighter tints are used in dark mode for accessible contrast.
    ============================================================ */
 
 :root {
-  --nbc-brand: #007681;
+  --nbc-brand: #003f5c;
   --nbc-accent: var(--nbc-brand);
-  --nbc-highlight: #74aa50;
-  --nbc-highlight-soft: rgba(116, 170, 80, 0.16);
-  --nbc-highlight-contrast: #17320d;
+  --nbc-highlight: #4298b5;
+  --nbc-highlight-soft: rgba(66, 152, 181, 0.16);
+  --nbc-highlight-contrast: #002b3a;
 }
 html.dark {
-  --nbc-accent: #69d1d8;
-  --nbc-highlight: #8bc66a;
-  --nbc-highlight-soft: rgba(139, 198, 106, 0.2);
-  --nbc-highlight-contrast: #17320d;
+  --nbc-accent: #00b3ff;
+  --nbc-highlight: #2d6f91;
+  --nbc-highlight-soft: rgba(45, 111, 145, 0.24);
+  --nbc-highlight-contrast: #fff;
 }
 
 /* ---------- Site title (upper-left) ---------- */
@@ -36,6 +38,89 @@ html.dark {
 /* ---------- Top-nav links ---------- */
 .myst-top-nav-item {
   font-weight: 500;
+}
+.myst-top-nav-item a:hover,
+.myst-top-nav-dropdown button:hover {
+  color: var(--nbc-accent);
+}
+.myst-top-nav-dropdown button svg {
+  color: var(--nbc-highlight);
+}
+.myst-top-nav-dropdown-item:hover,
+.myst-top-nav-dropdown-item:focus {
+  background-color: var(--nbc-highlight-soft) !important;
+}
+
+/* On desktop, lay every course page out as a scrollable row of tabs beneath
+   the site title and controls. The explicit sidebar rule also covers a dev
+   server that has retained an older copy of the MyST layout configuration. */
+@media (min-width: 1024px) {
+  .myst-primary-sidebar {
+    display: none !important;
+  }
+
+  .myst-top-nav-bar {
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    row-gap: 0.45rem;
+  }
+  .myst-top-nav-bar > :first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .myst-top-nav-bar > :last-child {
+    display: contents;
+  }
+  .myst-top-nav-bar > :last-child > :first-child {
+    display: flex !important;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    gap: 0.25rem;
+    overflow-x: auto;
+    padding: 0.15rem 0 0.25rem 0.65rem;
+    scrollbar-width: thin;
+    white-space: nowrap;
+  }
+  .myst-top-nav-bar > :last-child > :nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .myst-top-nav-bar > :last-child > :nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .myst-top-nav-bar .nbc-search {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .myst-theme-button {
+    grid-column: 4;
+    grid-row: 1;
+    justify-self: end;
+    margin-left: auto;
+  }
+  .myst-top-nav-item {
+    margin: 0;
+  }
+  .myst-top-nav-item > a {
+    margin: 0;
+    padding: 0.4rem 0.65rem;
+    border: 1px solid transparent;
+    border-radius: 0.4rem;
+  }
+  .myst-top-nav-item > a:hover {
+    background-color: var(--nbc-highlight-soft);
+  }
+  .myst-top-nav-item > a.border-b {
+    color: var(--nbc-accent);
+    background-color: var(--nbc-highlight-soft);
+    border-color: var(--nbc-highlight);
+  }
+}
+
+/* Keep the light/dark toggle at the far-right edge on smaller layouts too. */
+.myst-theme-button {
+  margin-left: auto !important;
 }
 
 /* ---------- Article links ----------
@@ -189,6 +274,157 @@ header.myst-fm-authors-affiliations {
   margin: 0;
 }
 
+/* ---------- Team ---------- */
+.nbc-team-profile-row {
+  display: grid;
+  width: calc(100% + 10rem);
+  grid-template-columns: minmax(15rem, 18rem) minmax(0, 1fr);
+  align-items: start;
+  gap: 2.5rem;
+  margin: 1.5rem 0;
+}
+.nbc-team-bio {
+  max-width: 46rem;
+  font-size: 0.925rem;
+  line-height: 1.65;
+}
+.nbc-team-bio p:first-child {
+  margin-top: 0;
+}
+@media (max-width: 700px) {
+  .nbc-team-profile-row {
+    width: 100%;
+    grid-template-columns: minmax(0, 18rem);
+    gap: 1.25rem;
+  }
+}
+.nbc-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 18rem));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.nbc-team-card {
+  overflow: hidden;
+  border: 1px solid rgba(0, 63, 92, 0.2);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.08);
+}
+html.dark .nbc-team-card {
+  border-color: rgba(0, 179, 255, 0.28);
+  background: rgba(45, 111, 145, 0.12);
+}
+.nbc-team-card .nbc-team-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin: 0;
+}
+.nbc-team-card .nbc-team-logo {
+  box-sizing: border-box;
+  object-fit: contain;
+  padding: 1.25rem;
+  background: #fff;
+}
+.nbc-team-card h3 {
+  margin: 0;
+  padding: 1rem 1.1rem 1.1rem;
+  color: var(--nbc-accent);
+  font-size: 1.15rem;
+}
+.nbc-team-card:has(.nbc-team-links) h3 {
+  padding-bottom: 0.65rem;
+}
+.nbc-team-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0 1.1rem 1.1rem;
+}
+.nbc-team-links p {
+  display: contents;
+}
+.nbc-team-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--nbc-accent);
+  border-radius: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+}
+.nbc-team-links a:hover,
+.nbc-team-links a:focus-visible {
+  color: var(--nbc-highlight-contrast) !important;
+  border-color: var(--nbc-highlight);
+  background: var(--nbc-highlight);
+}
+
+/* ---------- Resources ---------- */
+.nbc-resource-row {
+  display: grid;
+  grid-template-columns: minmax(12rem, 17rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  margin: 1rem 0 2.5rem;
+}
+.nbc-resource-image-placeholder {
+  display: grid;
+  min-height: 11rem;
+  place-items: center;
+  padding: 1rem;
+  color: var(--nbc-accent);
+  background: var(--nbc-highlight-soft);
+  border: 2px dashed var(--nbc-highlight);
+  border-radius: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+}
+.nbc-resource-image {
+  display: grid;
+  min-height: 11rem;
+  place-items: center;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid rgba(0, 63, 92, 0.2);
+  border-radius: 0.75rem;
+}
+.nbc-resource-image img {
+  display: block;
+  width: 100%;
+  max-height: 15rem;
+  margin: 0;
+  object-fit: contain;
+}
+.nbc-resource-image-placeholder p,
+.nbc-resource-copy p {
+  margin: 0;
+}
+.nbc-resource-copy {
+  min-height: 11rem;
+  padding: 1.25rem;
+  border-left: 3px solid var(--nbc-highlight);
+  background: var(--nbc-highlight-soft);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+@media (max-width: 700px) {
+  .nbc-resource-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+  .nbc-resource-image-placeholder,
+  .nbc-resource-image,
+  .nbc-resource-copy {
+    min-height: 8rem;
+  }
+}
+
 /* ---------- Search ----------
    The theme's dialog-based search is replaced at runtime (see
    scripts/patch_theme.py) with a flat input in the top bar. No overlay,
@@ -267,22 +503,6 @@ a.nbc-search-hit.active {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
-/* ---------- MSA logo (bottom of the left sidebar) ----------
-   Injected at runtime by scripts/patch_theme.py; light/dark variants
-   follow the html.dark toggle. */
-.nbc-msa-side {
-  display: block;
-  margin: 1.5rem 0.75rem 1rem 0.75rem;
-  max-width: 150px;
-}
-.nbc-msa-side img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-html:not(.dark) .nbc-msa-side .nbc-msa-dark { display: none; }
-html.dark .nbc-msa-side .nbc-msa-light { display: none; }
 
 /* ---------- Article heading spacing ----------
    With hide_title_block, the first heading otherwise sits flush

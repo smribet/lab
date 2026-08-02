@@ -167,30 +167,8 @@ _RUNTIME = """
       }
     },true);
   }
-  /* ---------- MSA logo at the bottom of the left sidebar ---------- */
-  function msaTick(){
-    var toc=document.querySelector('.myst-primary-sidebar-toc');
-    if(!toc||!toc.parentElement)return;
-    if(toc.parentElement.querySelector('.nbc-msa-side'))return;
-    var a=document.createElement('a');
-    a.className='nbc-msa-side';
-    a.href='https://www.microscopy.org/';
-    a.target='_blank';
-    a.rel='noopener';
-    [['nbc-msa-light','__MSA_LIGHT__'],['nbc-msa-dark','__MSA_DARK__']]
-      .forEach(function(v){
-        var img=document.createElement('img');
-        img.className=v[0];
-        img.alt='Microscopy Society of America';
-        img.src=v[1];
-        a.appendChild(img);
-      });
-    toc.after(a);
-  }
-
   function tick(){
     build(document.querySelector('button.myst-search-bar'));
-    msaTick();
   }
   function start(){
     tick();
@@ -204,19 +182,6 @@ _RUNTIME = """
   }else{start();}
 })();
 """
-
-def _data_uri(path):
-    import base64
-    with open(path, "rb") as f:
-        return "data:image/png;base64," + base64.b64encode(f.read()).decode()
-
-
-ASSETS = os.path.normpath(os.path.join(HERE, "..", "assets"))
-_RUNTIME = _RUNTIME.replace(
-    "__MSA_LIGHT__", _data_uri(os.path.join(ASSETS, "msa-logo-light.png"))
-).replace(
-    "__MSA_DARK__", _data_uri(os.path.join(ASSETS, "msa-logo-dark.png"))
-)
 
 # The marker embeds a hash of the runtime, so editing the code above is
 # enough to make the next patch run replace an older injected copy.

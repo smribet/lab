@@ -19,33 +19,28 @@ project:
     - README.md
   toc:
     - file: index.md
+    - file: team.md
+    - file: users.md
+    - file: publications.md
     - file: agenda.md
-    - title: Modules
-      children:
-        - file: topics/acquisition.md
-        - file: topics/software.md
-        - file: topics/data-handling.md
-        - file: topics/strain.md
-        - file: topics/orientation.md
-        - file: topics/virtual-imaging.md
-        - file: topics/ml-clustering.md
-        - file: topics/polymers.md
-        - file: topics/amorphous-pdf.md
     - file: resources.md
 site:
   template: book-theme
-  title: Nanobeam 4DSTEM
+  title: Ribet Research Group
   options:
     # Custom theming — see ./style.css
     style: ./style.css
-    logo_text: Nanobeam 4DSTEM
+    logo_text: Ribet Research Group
     folders: true
     outline_maxdepth: 2
+    hide_toc: true
     hide_footer_links: true
   nav:
-    - title: M&M 2026
-      url: https://mmconference.microscopy.org/
-    - title: py4DSTEM
-      url: https://github.com/py4dstem/py4DSTEM
-    - title: Tutorials
-      url: https://drive.google.com/drive/folders/1_emscd_XRTv1hUWh55-hbWty2XoU0R7X?usp=drive_link
+    - title: Team
+      url: /team
+    - title: Users
+      url: /users
+    - title: Publications
+      url: /publications
+    - title: Resources
+      url: /resources

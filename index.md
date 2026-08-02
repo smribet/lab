@@ -48,15 +48,6 @@ University of Glasgow
 Companion site for **Short Course X11** at [Microscopy & Microanalysis 2026](https://mmconference.microscopy.org/), Sunday, August 2, 2026, Room S202 B, Baird Center, Milwaukee, WI. This site collects the [2026 agenda](./agenda.md), teaching material for each module, hands-on Google Colab tutorials, and references for further reading.
 :::
 
-:::{div}
-:class: nbc-hero
-
-```{image} assets/cover-full.jpg
-:alt: Nanobeam diffraction schematics: strain mapping of a crystalline nanostructure (top) and orientation mapping of a polycrystalline film (bottom)
-```
-
-:::
-
 ## What this course covers
 
 - Practical guidance for acquiring nanobeam diffraction data, including probe conditions, signal-to-noise, and camera parameters
@@ -65,4 +56,4 @@ Companion site for **Short Course X11** at [Microscopy & Microanalysis 2026](htt
 - Diffraction analysis of crystalline samples: strain mapping, orientation mapping, and phase identification
 - Diffraction analysis of disordered or semicrystalline materials: polymer orientation, phase mapping, and pair distribution functions
 
-Use the sidebar (or the [agenda](./agenda.md)) to jump to the module pages. Each has teaching notes, the hands-on Colab tutorial, and references for further reading.
+Use the navigation tabs above (or the [agenda](./agenda.md)) to jump to the module pages. Each has teaching notes, the hands-on Colab tutorial, and references for further reading.
