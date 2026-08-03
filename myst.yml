@@ -3,7 +3,7 @@
 version: 1
 project:
   id: ribet_group
-  title: Ribet Research 
+  title: Ribet
   description: >
     Companion site for the M&M 2026 Sunday short course X11 — Nanobeam
     Diffraction and 4D-STEM Analysis of Crystalline and Disordered Materials.
@@ -20,20 +20,21 @@ project:
   toc:
     - file: index.md
     - file: team.md
+    - file: research.md
     - file: users.md
     - file: publications.md
     - file: open-source-code.md
     - file: funding.md
 site:
   template: book-theme
-  title: Ribet Research 
+  title: Ribet
   parts:
     footer: footer.md
   options:
     # Custom theming — see ./style.css
     style: ./style.css
     logo: ./assets/logo/frog_logo.png
-    logo_text: Ribet Research 
+    logo_text: Ribet
     favicon: ./assets/logo/frog_logo.png
     folders: true
     outline_maxdepth: 2
@@ -42,6 +43,8 @@ site:
   nav:
     - title: Team
       url: /team
+    - title: Research
+      url: /research
     - title: Users @ the MF
       url: /users
     - title: Publications

@@ -285,6 +285,30 @@ header.myst-fm-authors-affiliations {
   margin: 1rem auto 1.5rem auto;
 }
 
+/* ---------- Home-page banner ---------- */
+article:has(.nbc-home-banner) {
+  width: 100%;
+  max-width: none;
+}
+article:has(.nbc-home-banner) > :not(.nbc-home-banner) {
+  grid-column: body;
+}
+.nbc-home-banner {
+  display: block;
+  grid-column: screen !important;
+  justify-self: stretch;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin: 0 0 2rem;
+  border-radius: 0;
+}
+@media (max-width: 700px) {
+  .nbc-home-banner {
+    margin-bottom: 1.5rem;
+  }
+}
+
 /* ---------- Research themes ---------- */
 .nbc-research-grid {
   display: grid;

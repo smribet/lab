@@ -1,12 +1,13 @@
-# Ribet Research
+# Ribet
 
-Website for the Ribet Research group at the National Center for Electron Microscopy within the Molecular Foundry at Lawrence Berkeley National Laboratory.
+Website for the Ribet group at the National Center for Electron Microscopy within the Molecular Foundry at Lawrence Berkeley National Laboratory.
 
 The group develops computational methods, experimental techniques, and hardware for electron microscopy, with research spanning cryogenic electron microscopy, computational microscopy and open-source software, and functional materials.
 
 ## Website content
 
-- `index.md` — group overview and research themes
+- `index.md` — group overview
+- `research.md` — research themes
 - `team.md` — current group members and alumni
 - `users.md` — Molecular Foundry User Program information and user highlights
 - `publications.md` — publication list

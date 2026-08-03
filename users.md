@@ -1,12 +1,8 @@
 ---
-title: Users @ the MF
+title: Molecular Foundry User Program
 site:
   hide_outline: true
 ---
-
-# Users @ the MF
-
-## Molecular Foundry User Program
 
 ::::{div}
 :class: nbc-resource-row nbc-user-program-row
