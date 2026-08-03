@@ -22,15 +22,19 @@ project:
     - file: team.md
     - file: users.md
     - file: publications.md
-    - file: resources.md
+    - file: open-source-code.md
     - file: funding.md
 site:
   template: book-theme
   title: Ribet Research 
+  parts:
+    footer: footer.md
   options:
     # Custom theming — see ./style.css
     style: ./style.css
+    logo: ./assets/logo/frog_logo.png
     logo_text: Ribet Research 
+    favicon: ./assets/logo/frog_logo.png
     folders: true
     outline_maxdepth: 2
     hide_toc: true
@@ -38,11 +42,13 @@ site:
   nav:
     - title: Team
       url: /team
-    - title: Users
+    - title: Users @ the MF
       url: /users
     - title: Publications
       url: /publications
     - title: Resources
-      url: /resources
-    - title: Funding
-      url: /funding
+      children:
+        - title: Open-Source Code
+          url: /open-source-code
+        - title: Funding
+          url: /funding

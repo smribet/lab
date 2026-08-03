@@ -1,10 +1,10 @@
 ---
-title: Users
+title: Users @ the MF
 site:
   hide_outline: true
 ---
 
-# Users
+# Users @ the MF
 
 ## Molecular Foundry User Program
 
@@ -14,8 +14,19 @@ site:
 :::{div}
 :class: nbc-resource-image
 
-```{image} assets/resources/MF-Logo.png
+```{image} assets/user_highlights/molecular-foundry.jpg
+:alt: Molecular Foundry building at Lawrence Berkeley National Laboratory
+:class: nbc-mf-photo
+```
+
+```{image} assets/user_highlights/MF-Logo.png
 :alt: Molecular Foundry logo
+:class: nbc-mf-logo
+```
+
+```{image} assets/user_highlights/Berkeley_lab.png
+:alt: Lawrence Berkeley National Laboratory logo
+:class: nbc-lbl-logo
 ```
 
 :::
@@ -23,7 +34,9 @@ site:
 :::{div}
 :class: nbc-resource-copy
 
-**Interested in working with us?** The National Center for Electron Microscopy is within the [Molecular Foundry](https://foundry.lbl.gov/), which is a Department of Energy nanoscience user facility that provides researchers with access to advanced instrumentation and scientific expertise. Through its [User Program](https://foundry.lbl.gov/user-program/user-program-overview/), access is free for non-proprietary research and awarded through a competitive, peer-reviewed proposal process.  Feel free to reach out to [Stephanie Ribet](./team.md) if you are interested in learning more about user opportunities and workign with our team.
+**Interested in working with us?** The [Molecular Foundry](https://foundry.lbl.gov/) is a Department of Energy nanoscience user facility that provides researchers with access to advanced instrumentation and scientific expertise. Through its [User Program](https://foundry.lbl.gov/user-program/user-program-overview/), access is free for non-proprietary research and awarded through a competitive, peer-reviewed proposal process.
+
+Feel free to reach out to [Stephanie Ribet](./team.md) to learn more about user opportunities at the National Center for Electron Microscopy within the Molecular Foundry. Potential projects may include access to advanced electron microscopes, collaboration on data analysis, and requests for our custom condenser aperatures. 
 
 :::
 
@@ -33,6 +46,24 @@ site:
 
 :::::{div}
 :class: nbc-user-highlights-grid
+
+::::{div}
+:class: nbc-user-highlight-card
+
+:::{div}
+:class: nbc-user-highlight-image
+
+```{image} assets/user_highlights/flowlines.jpg
+:alt: Flow-line map visualizing the nanoscale structure of a dynamically crosslinked polyolefin blend
+```
+
+:::
+
+4D-STEM characterization reveals how dynamic covalent crosslinking organizes otherwise immiscible polyolefin blends into mechanically robust, co-continuous architectures helping to explain the enhanced mechanical properties of these material systems.
+
+E. K. Neidhart et al., “[Polyolefin blends with co-continuous architectures enabled by dynamic covalent crosslinking](https://doi.org/10.1126/sciadv.aee2328),” *Science Advances* **12**(20) (2026).
+
+::::
 
 ::::{div}
 :class: nbc-user-highlight-card
@@ -67,24 +98,6 @@ T. Kochetkova et al., “[Structural and Mechanical Analysis of Individual Miner
 In irradiated amorphous materials, structural heterogeneities can strongly influence bulk functional properties; 4D-STEM strain mapping of ion-irradiated amorphous Bi₂O₃ reveals up to 3% compressive strain and paracrystalline ordering around Ar bubbles, enabling estimates of bubble pressure.
 
 E. Kennedy\* and S. M. Ribet\* et al., “[Mapping strain and structural heterogeneities around bubbles in amorphous ionically conductive Bi₂O₃](https://doi.org/10.1016/j.matdes.2025.114282),” *Materials & Design* **256**, 114282 (2025).
-
-::::
-
-::::{div}
-:class: nbc-user-highlight-card
-
-:::{div}
-:class: nbc-user-highlight-image
-
-```{image} assets/user_highlights/BN_defects.png
-:alt: Electron ptychography reconstructions of boron-terminated tetravacancies in monolayer hBN
-```
-
-:::
-
-High-dose STEM irradiation forms boron-terminated tetravacancies in monolayer hBN, creating triangular nanopores with potential technological applications. STEM and EELS identify their edge chemistry, while electron ptychography provides high-contrast images that reveal structural relaxation and enhanced electron density associated with bonding.
-
-D. O. Byrne et al., “[Fabrication and characterization of boron-terminated tetravacancies in monolayer hBN using STEM, EELS and electron ptychography](https://doi.org/10.1016/j.ultramic.2025.114305),” *Ultramicroscopy*, 114305 (2025).
 
 ::::
 

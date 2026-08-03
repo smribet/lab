@@ -4,6 +4,8 @@ site:
   hide_outline: true
 ---
 
+We grateful acknowledge funding from the following sources. 
+
 # Funding
 
 ## GENESIS

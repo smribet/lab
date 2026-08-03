@@ -34,6 +34,14 @@ html.dark {
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
 }
+.myst-home-link-logo {
+  margin-right: 0.5rem !important;
+}
+.myst-home-link-logo img {
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: contain;
+}
 
 /* ---------- Top-nav links ---------- */
 .myst-top-nav-item {
@@ -78,9 +86,8 @@ html.dark {
     align-self: center;
     justify-self: start;
     gap: 0.25rem;
-    overflow-x: auto;
+    overflow: visible;
     padding: 0;
-    scrollbar-width: thin;
     white-space: nowrap;
   }
   .myst-top-nav-bar > :last-child > :nth-child(2) {
@@ -102,7 +109,21 @@ html.dark {
     margin-left: auto;
   }
   .myst-top-nav-item {
+    display: flex;
+    align-items: center;
     margin: 0;
+  }
+  .myst-top-nav-dropdown {
+    display: flex;
+    align-items: center;
+    margin: 0 !important;
+    z-index: 50;
+  }
+  .myst-top-nav-dropdown button {
+    margin: 0 !important;
+    padding: 0.4rem 0.65rem;
+    line-height: inherit;
+    cursor: pointer;
   }
   .myst-top-nav-item > a {
     margin: 0;
@@ -264,6 +285,52 @@ header.myst-fm-authors-affiliations {
   margin: 1rem auto 1.5rem auto;
 }
 
+/* ---------- Research themes ---------- */
+.nbc-research-grid {
+  display: grid;
+  width: calc(100% + 10rem);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1rem 0 2.5rem;
+}
+.nbc-research-card {
+  overflow: hidden;
+  border: 1px solid rgba(0, 63, 92, 0.2);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.08);
+}
+html.dark .nbc-research-card {
+  border-color: rgba(0, 179, 255, 0.28);
+  background: rgba(45, 111, 145, 0.12);
+}
+.nbc-research-image-placeholder {
+  display: grid;
+  aspect-ratio: 4 / 3;
+  place-items: center;
+  color: var(--nbc-accent);
+  background: var(--nbc-highlight-soft);
+  border-bottom: 2px dashed var(--nbc-highlight);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.nbc-research-image-placeholder p {
+  margin: 0;
+}
+.nbc-research-card h3 {
+  margin: 0;
+  padding: 1rem 1.1rem 1.1rem;
+  color: var(--nbc-accent);
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+@media (max-width: 700px) {
+  .nbc-research-grid {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* Organizer list — compact row under the title */
 .nbc-organizers {
   display: grid;
@@ -384,7 +451,7 @@ html.dark .nbc-team-card {
 }
 .nbc-user-program-row {
   width: calc(100% + 10rem);
-  grid-template-columns: minmax(15rem, 18rem) minmax(0, 1fr);
+  grid-template-columns: minmax(18rem, 22rem) minmax(0, 1fr);
   gap: 2.5rem;
 }
 .nbc-funding-row {
@@ -501,6 +568,26 @@ html.dark .nbc-user-highlight-card {
   margin: 0;
   object-fit: contain;
 }
+.nbc-user-program-row .nbc-resource-image {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: center;
+  justify-items: center;
+  gap: 1rem 1.25rem;
+}
+.nbc-user-program-row .nbc-mf-photo {
+  grid-column: 1 / -1;
+  height: auto;
+  max-height: none;
+  border-radius: 0.4rem;
+  object-fit: contain;
+}
+.nbc-user-program-row .nbc-mf-logo,
+.nbc-user-program-row .nbc-lbl-logo {
+  width: 85%;
+  height: 4rem;
+  max-height: 4rem;
+  object-fit: contain;
+}
 .nbc-resource-image-placeholder p,
 .nbc-resource-copy p {
   margin: 0;
@@ -535,6 +622,65 @@ html.dark .nbc-user-highlight-card {
   .nbc-resource-copy {
     min-height: 8rem;
   }
+}
+
+/* ---------- Site footer ---------- */
+footer.footer {
+  display: flex !important;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 60;
+  width: 100%;
+  min-height: 0;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 !important;
+  padding: 0.2rem 1rem !important;
+  background-color: #fff !important;
+  background-image: linear-gradient(
+    var(--nbc-highlight-soft),
+    var(--nbc-highlight-soft)
+  ) !important;
+  box-shadow: none !important;
+}
+footer.footer > * {
+  width: auto !important;
+  margin-right: 0 !important;
+  margin-left: auto !important;
+}
+body {
+  padding-bottom: 2.35rem;
+}
+.nbc-site-footer-inner {
+  display: flex;
+  flex: 0 0 auto;
+  width: auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  margin: 0 0 0 auto;
+}
+.nbc-site-footer-inner p {
+  display: contents;
+  margin: 0;
+}
+.nbc-site-footer-inner .nbc-footer-logo {
+  display: block;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+  margin: 0;
+  object-fit: contain;
+}
+.nbc-site-footer-inner .nbc-footer-lbl-logo {
+  margin-left: auto;
+  height: 1.45rem;
+}
+.nbc-site-footer-inner .nbc-footer-mf-logo {
+  height: 1.85rem;
+  mix-blend-mode: multiply;
 }
 
 /* ---------- Search ----------
