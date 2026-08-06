@@ -97,4 +97,22 @@ E. Kennedy\* and S. M. Ribet\* et al., “[Mapping strain and structural heterog
 
 ::::
 
+::::{div}
+:class: nbc-user-highlight-card
+
+:::{div}
+:class: nbc-user-highlight-image
+
+```{image} assets/user_highlights/apo.png
+:alt: Cryogenic electron micrograph showing apoferritin protein particles
+```
+
+:::
+
+Extending STEM ptychography methods to biological structures, low-dose cryogenic electron ptychography was integrated into a single-particle analysis workflow to resolve proteins at sub-nanometer resolution.
+
+B. Küçükoğlu et al., “[Low-dose cryo-electron ptychography of proteins at sub-nanometer resolution](https://doi.org/10.1038/s41467-024-52403-5),” *Nature Communications* **15**, 8062 (2024).
+
+::::
+
 :::::

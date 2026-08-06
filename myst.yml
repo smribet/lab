@@ -24,7 +24,9 @@ project:
     - file: users.md
     - file: publications.md
     - file: open-source-code.md
+    - file: conferences.md
     - file: funding.md
+    - file: gallery.md
 site:
   template: book-theme
   title: Ribet
@@ -49,9 +51,13 @@ site:
       url: /users
     - title: Publications
       url: /publications
+    - title: Gallery
+      url: /gallery
     - title: Resources
       children:
         - title: Open-Source Code
           url: /open-source-code
+        - title: Conferences
+          url: /conferences
         - title: Funding
           url: /funding

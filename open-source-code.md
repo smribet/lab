@@ -4,6 +4,34 @@ title: Open-Source Code
 
 # Open-Source Code
 
+## MAPED
+
+::::{div}
+:class: nbc-resource-row
+
+:::{div}
+:class: nbc-resource-image
+
+```{image} assets/resources/MAPED.png
+:alt: Multi-angle precession electron diffraction patterns combined into a MAPED diffraction map
+:class: nbc-maped-image
+```
+
+:::
+
+:::{div}
+:class: nbc-resource-copy
+
+**MAPED** (multi-angle precession electron diffraction) is an open-source experimental and computational approach for generating 4D-STEM datasets that offer many of the advantages of precession experiments without requiring dedicated hardware. Multiple datasets are acquired at different beam tilts and computationally combined during post-processing.
+
+**Authors:** S. M. Ribet\*, R. Dhall\*, C. Ophus, K. C. Bustillo<br>
+
+**Links:** [Source code](https://github.com/smribet/multi_angle_precession_electron_diffraction) · [Paper](https://doi.org/10.1093/mam/ozaf103)
+
+:::
+
+::::
+
 ## quantEM
 
 ::::{div}
