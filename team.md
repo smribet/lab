@@ -5,7 +5,7 @@ site:
 ---
 
 :::{dropdown} Open Positions
-Reach out to Stephanie to learn more about current openings for internships and postdoctoral research positions.
+Reach out to Stephanie to learn more about current openings for internships and postdoctoral research positions. We're currently looking for an experimental postdoc to work with us on soft microscopy.
 :::
 
 

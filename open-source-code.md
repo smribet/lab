@@ -76,7 +76,7 @@ title: Open-Source Code
 
 **py4DSTEM** is an open-source set of Python tools for processing and analyzing four-dimensional scanning transmission electron microscopy (4D-STEM) data, including nanobeam and large-convergence-angle diffraction data.
 
-**Links:** [Source code](https://github.com/py4dstem/py4DSTEM) · [Tutorials](https://github.com/py4dstem/py4DSTEM_tutorials)
+**Links:** [Source code](https://github.com/py4dstem/py4DSTEM) · [Tutorials](https://github.com/py4dstem/py4DSTEM_tutorials) · [Paper](https://doi.org/10.1017/S1431927621000477)
 
 :::
 

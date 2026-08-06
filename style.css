@@ -170,6 +170,14 @@ article .hover-link {
   color: var(--nbc-accent) !important;
 }
 
+/* The theme crops hover-preview thumbnails to a 150px-tall banner. Keep the
+   full portrait visible in the Team page preview used by the User Program. */
+.hover-card-content img[src*="/Ribet-"] {
+  height: auto !important;
+  object-fit: contain !important;
+  object-position: center;
+}
+
 /* Cards: accent title, neutral body text */
 article a.myst-card {
   color: inherit !important;
@@ -179,6 +187,18 @@ article a.myst-card .myst-card-title {
 }
 article a.myst-card:hover {
   border-color: var(--nbc-highlight) !important;
+}
+
+/* The Publications page already contains complete citations. MyST also
+   derives a bibliography from its DOI links, so suppress that duplicate. */
+article:has(> #publications):has(> #patents) .myst-bibliography {
+  display: none;
+}
+
+/* Resource cards link their papers inline, so the generated bibliography is
+   also redundant on the Open-Source Code page. */
+article:has(> #maped):has(> #py4dstem) .myst-bibliography {
+  display: none;
 }
 
 /* ---------- Places book-theme still uses Tailwind blue ---------- */
