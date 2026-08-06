@@ -1,6 +1,6 @@
 # Ribet
 
-Website for the Ribet group at the National Center for Electron Microscopy within the Molecular Foundry at Lawrence Berkeley National Laboratory.
+Website for Stephanie Ribet's group at the National Center for Electron Microscopy within the Molecular Foundry at Lawrence Berkeley National Laboratory.
 
 ## Building the site
 
