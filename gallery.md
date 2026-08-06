@@ -10,7 +10,7 @@ site:
 :class: nbc-gallery-grid
 
 ```{image} assets/gallery/microscopy/amFIBian.png
-:alt: Frog pattern created a FIB
+:alt: Frog pattern created with a FIB
 :class: nbc-gallery-image
 ```
 

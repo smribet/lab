@@ -1,12 +1,12 @@
-# MyST configuration for the M&M 2026 X11 short-course companion site.
+# MyST configuration for the Ribet group website.
 # See: https://mystmd.org/guide/frontmatter
 version: 1
 project:
   id: ribet_group
   title: Ribet
   description: >
-    Companion site for the M&M 2026 Sunday short course X11 — Nanobeam
-    Diffraction and 4D-STEM Analysis of Crystalline and Disordered Materials.
+    Website for the Ribet electron microscopy research group at the Molecular
+    Foundry, Lawrence Berkeley National Laboratory.
   keywords:
     - electron microscopy
     - STEM

@@ -68,7 +68,7 @@ Combining computational imaging with electron microscopy experiments enables cha
 :::{div}
 :class: nbc-research-copy
 
-Advanced electron microscopy technique development often starts with model systems. We are pushing these approaches forward by bridging advances in electron microscopy and complex real-world materials. This often requires the development of new experimental and computational protocols. We are interested in a variety of applications, with an emphasis on energy technologies, critical materials recovery, quantum materials, microelectronics, and materials for extreme environments.
+Advanced electron microscopy technique development often starts with model systems. We are pushing these approaches forward by applying advanced electron microscopy techniques to challenges related to complex real-world materials. Bridging this gap often requires the development of new experimental and computational protocols. We are interested in a variety of applications, with an emphasis on energy technologies, critical materials recovery, quantum materials, microelectronics, and materials for extreme environments.
 
 :::
 
