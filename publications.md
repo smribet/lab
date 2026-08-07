@@ -6,9 +6,9 @@ title: Publications and Patents
 
 [Full publication record available on Google Scholar](https://scholar.google.com/citations?user=g2-jjNwAAAAJ&hl=en&oi=ao).
 
-## Publications
+## Papers
 
-### 2026
+**2026**
 
 1. G. Varnavides, W. P. M. de Kleijne, S. M. Ribet, “The ABCs of phase retrieval: Connecting the acronyms of scanning transmission electron microscopy,” [*MRS Bulletin*](https://doi.org/10.1557/s43577-026-01100-3), 51, 2026.
 2. M. K. Wall, A. J. Pattison, E. S. Barnard, S. M. Ribet, P. Ercius, “TEM Agent: enhancing transmission electron microscopy with modern AI tools,” [*npj Comput. Mater.*](https://doi.org/10.1038/s41524-026-02103-z), 2026.
@@ -23,7 +23,7 @@ title: Publications and Patents
 11. E. D. I. Tillotson, W. Thornley, W. Talbott, A. S. Eggeman, D. Kriuchkova, S. Sullivan-Allsop, M. Smith, X. Liu, A. Slattery, P. L. Yap, D. Losic, Z. Xu, H. Wang, J. Ciston, A. Rakowski, S. M. Ribet, B. H. Savitzky, M. E. Schuster, C. S. Allen, D. Douglas-Henry, V. Nicolosi, A. Herzing, J. O'Connell, E. J. Olivier, J. Neethling, Y. Zou, E. C. Duran, R. Cai, D. Ngo, R. Gorbachev, J. Haas, M. Schlegel, J. C. Meyer, A. Centeno, A. Pesquera, A. Zurutuza, S. Kang, J. Park, I. Erofeev, U. Mirsaidov, C. Ophus, C. Rentenberger, T. Waitz, J. Kotakoski, A. Roy, R. Arenal, A. Pollard and S. Haigh, “A large interlaboratory electron diffraction study of monolayer graphene,” [*2D Mater.*](https://doi.org/10.1088/2053-1583/ae2ca1), 13, 025007, 2026.
 12. D. O. Byrne, S. M. Ribet, D. Kepaptsoglou, Q. M. Ramasse, C. Ophus, F. I. Allen, “Fabrication and characterization of boron-terminated tetravacancies in monolayer hBN using STEM, EELS and electron ptychography,” [*Ultramicroscopy*](https://doi.org/10.1016/j.ultramic.2025.114305), 282, 114305, 2026.
 
-### 2025
+**2025**
 
 13. A. R. C. McCray, S. M. Ribet, G. Varnavides, C. Ophus, “Deep generative priors for robust and efficient electron ptychography,” [*arXiv*](https://doi.org/10.48550/arXiv.2511.07795), 2511.07795, 2025.
 14. M. Palos, L. Spillane, G. Topore, Y. Li, D. Pesquera, C. Ophus, S. M. Ribet, M. S. Conroy, “Programmable Beam Control for Electron Energy-Loss Spectroscopy and Ptychography,” [*arXiv*](https://doi.org/10.48550/arXiv.2509.10726), 2509.10726, 2025.
@@ -40,7 +40,7 @@ title: Publications and Patents
 25. A. R. C. McCray, S. M. Ribet, G. Varnavides, C. Ophus, “Accelerating iterative ptychography with an integrated neural network,” [*J. Microsc.*](https://doi.org/10.1111/jmi.13407), 2025.
 26. S. Husremović, O. Gonzalez, B. H. Goodge, L. S. Xie, Z. Kong, W. Zhang, S. H. Ryu, S. M. Ribet, S. S. Fender, K. C. Bustillo, C. Song, J. Ciston, T. Taniguchi, K. Watanabe, C. Ophus, C. Jozwiak, A. Bostwick, E. Rotenberg, D. K. Bediako, “Tailored topotactic chemistry unlocks heterostructures of magnetic intercalation compounds,” [*Nat. Commun.*](https://doi.org/10.1038/s41467-025-56467-9), 16(1208), 2025.
 27. S. S. Welborn, C. Harris, S. M. Ribet, G. Varnavides, C. Ophus, B. Enders, P. Ercius, “Streaming large-scale electron microscopy data to a supercomputing facility,” [*Microsc. Microanal.*](https://doi.org/10.1093/mam/ozae109), 31(1), 2025.
-### 2024
+**2024**
 
 28. G. Varnavides, S. M. Ribet, C. Ophus, “Tilt-Corrected BF-STEM,” [*Elemental Microscopy*](https://www.elementalmicroscopy.com/articles/EM000002), 2024.
 29. E. Kennedy, J. Valdez, Y. Wang, S. M. Ribet, K. Sickafus, C. Kreller, B. Uberuaga, B. Derby, “Insights into defect kinetics, mass transport, and electronic structure from spectrum effects in ion-irradiated Bi<sub>2</sub>O<sub>3</sub>,” [*J. Mater. Chem. A*](https://pubs.rsc.org/en/content/articlelanding/2024/ta/d4ta05283h), 12(31445), 2024.
@@ -50,7 +50,7 @@ title: Publications and Patents
 33. C. G. Torres-Castanedo, D. P. Goronzy, T. Pham, A. McFadden, N. Materise, P. M. Das, M. Cheng, D. Lebedev, S. M. Ribet, M. J. Walker, D. A. Garcia-Wetten, C. J. Kopas, J. Marshall, E. Lachman, N. Zhelev, J. A. Sauls, J. Y. Mutus, C. R. H. McRae, V. P. Dravid, M. J. Bedzyk, M. C. Hersam, “Formation and microwave losses of hydrides in superconducting niobium thin films resulting from fluoride chemical processing,” [*Adv. Funct. Mater.*](https://doi.org/10.1002/adfm.202401365), 2401365, 2024.
 34. K. Koo, Z. Li, Y. Liu, S. M. Ribet, X. Fu, Y. Jia, X. Chen, G. Shekhawat, P. J. M. Smeets, R. Dos Reis, J. Park, J. M. Yuk, X. Hu, V. P. Dravid, “Ultrathin silicon nitride microchip for in-situ/operando microscopy with high spatial resolution and spectral visibility,” [*Sci. Adv.*](https://doi.org/10.1126/sciadv.adj6417), 10(3), 2024.
 
-### 2023
+**2023**
 
 35. G. Varnavides*, S. M. Ribet*, S. E. Zeltmann, Y. Yu, B. Savitzky, V. P. Dravid, M. C. Scott, C. Ophus, “Iterative phase retrieval algorithms for scanning transmission electron microscopy,” [*arXiv*](https://arxiv.org/abs/2309.05250), 2309.05250, 2023.
 36. S. M. Ribet, S. E. Zeltmann, K. C. Bustillo, R. Dhall, P. Denes, A. M. Minor, R. dos Reis, V. P. Dravid, C. Ophus, “Design of electrostatic aberration correctors for scanning transmission electron microscopy,” [*Microsc. Microanal.*](https://doi.org/10.1093/micmic/ozad111), 29(6), 1950–1960, 2023.
@@ -60,25 +60,25 @@ title: Publications and Patents
 40. Y. Liu, H. Xie, Z. Li, Y. Zhang, C. D. Malliakas, M. A. Malki, S. M. Ribet, S. Hao, T. Pham, Y. Wang, X. Hu, R. Dos Reis, G. J. Snyder, C. Uher, C. Wolverton, M. G. Kanatzidis, V. P. Dravid, “Unraveling the role of entropy in thermoelectrics: Entropy-stabilized quintuple rock salt PbGeSnCd<sub>x</sub>Te<sub>3+x</sub>,” [*JACS*](https://doi.org/10.1021/jacs.3c01693), 145(15), 8677–8688, 2023.
 41. M. Cheng, A. K. Iyer, A. P. Douvalis, S. M. Ribet, M. G. Kanatzidis, V. P. Dravid, “Cation segregation in alloyed thiophosphates Fe<sub>2-x</sub>Co<sub>x</sub>P<sub>2</sub>S<sub>6</sub>,” [*Chem. Mater.*](https://doi.org/10.1021/acs.chemmater.2c03738), 35(3), 1458–1465, 2023.
 
-### 2022
+**2022**
 
 42. A. A. Murthy, P. M. Das, S. M. Ribet, C. Kopas, J. Lee, M. J. Reagor, L. Zhou, M. J. Kramer, M. C. Hersam, M. Checchin, A. Grasselino, R. Dos Reis, V. P. Dravid, A. Romanenko, “Developing a chemical and structural understanding of the surface oxide in a niobium superconducting qubit,” [*ACS Nano*](https://doi.org/10.1021/acsnano.2c07913), 16(10), 17257–17262, 2022.
 43. K. A. Parker, S. M. Ribet, B. R. Kimmel, R. Dos Reis, M. Mrksich, V. P. Dravid, “Scanning transmission electron microscopy in a scanning electron microscope for the high-throughput imaging of biological assemblies,” [*Biomacromolecules*](https://pubs.acs.org/doi/abs/10.1021/acs.biomac.2c00323), 23(8), 3235–3242, 2022.
 44. K. Koo*, S. M. Ribet*, C. Zhang, P. J. M. Smeets, R. Dos Reis, X. Hu, V. P. Dravid, “Effects of the encapsulation membrane in operando scanning transmission electron microscopy,” [*Nano Lett.*](https://pubs.acs.org/doi/abs/10.1021/acs.nanolett.2c00893), 22(10), 4137–4144, 2022.
 
-### 2021
+**2021**
 
 45. S. M. Ribet, B. Shindel, R. Dos Reis, V. Nandwana, V. P. Dravid, “Phosphate elimination and recovery lightweight (PEARL) membrane: A sustainable environmental remediation approach,” [*PNAS*](https://www.pnas.org/doi/full/10.1073/pnas.2102583118), 118(23), 2021.
 46. S. M. Ribet*, A. A. Murthy*, E. W. Roth, R. Dos Reis, V. P. Dravid, “Making the most of your electrons: Challenges and opportunities in characterizing hybrid interfaces with STEM,” [*Mater. Today*](https://www.sciencedirect.com/science/article/abs/pii/S1369702121001632), 50, 100–115, 2021 (*invited review*).
 47. A. A. Murthy, S. M. Ribet, T. K. Stanev, P. Liu, T. Taniguchi, N. P. Stern, R. Dos Reis, V. P. Dravid, “Spatial Mapping of Electrostatic Fields in 2D Heterostructures,” [*Nano Lett.*](https://pubs.acs.org/doi/abs/10.1021/acs.nanolett.1c01636), 21(17), 7131–7137, 2021.
 48. K. He, K. Kim, C. J. Villa, S. M. Ribet, P. J. M. Smeets, R. dos Reis, P. W. Voorhees, X. Hu, V. P. Dravid, “Degeneration behavior of Cu nanowires under carbon dioxide environment: An *in situ/operando* study,” [*Nano Lett.*](https://pubs.acs.org/doi/abs/10.1021/acs.nanolett.1c01592), 21(16), 6813–6819, 2021.
 
-### 2020
+**2020**
 
 49. V. Nandwana, S. M. Ribet, R. Dos Reis, Y. Kuang, Y. More, V. P. Dravid, “OHM Sponge: A Versatile, Efficient, and Ecofriendly Environmental Remediation Platform,” [*Ind. Eng. Chem. Res.*](https://pubs.acs.org/doi/abs/10.1021/acs.iecr.0c01493), 59(23), 10945–10954, 2020.
 
 ## Patents
 
-### 2025
+**2025**
 
 1. S. M. Ribet, V. Nandwana, V. P. Dravid, “Magnetic Nanoparticle Coated Porous Membrane for Recovery of Contaminants,” U.S. Patent 12,390,790 B2, awarded August 19, 2025.

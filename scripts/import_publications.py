@@ -94,7 +94,8 @@ def render(records: list[tuple[int, str, str]]) -> str:
     ]
     number = 1
     for year in sorted(by_year, reverse=True):
-        lines.extend(("", f"## {year}", ""))
+        # Keep years visible in the page without adding them to its sidebar.
+        lines.extend(("", f"**{year}**", ""))
         for _, entry in by_year[year]:
             lines.append(f"{number}. {entry}")
             number += 1

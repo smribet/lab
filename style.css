@@ -191,7 +191,7 @@ article a.myst-card:hover {
 
 /* The Publications page already contains complete citations. MyST also
    derives a bibliography from its DOI links, so suppress that duplicate. */
-article:has(> #publications):has(> #patents) .myst-bibliography {
+article:has(> #papers):has(> #patents) .myst-bibliography {
   display: none;
 }
 
