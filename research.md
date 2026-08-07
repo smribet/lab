@@ -7,6 +7,7 @@ site:
 :::::{div}
 :class: nbc-research-list
 
+<!-- Functional Materials card hidden; remove these comment markers to restore it.
 ::::{div}
 :class: nbc-research-card
 
@@ -73,5 +74,6 @@ Advanced electron microscopy technique development often starts with model syste
 :::
 
 ::::
+-->
 
 :::::
