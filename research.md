@@ -7,7 +7,6 @@ site:
 :::::{div}
 :class: nbc-research-list
 
-<!-- Functional Materials card hidden; remove these comment markers to restore it.
 ::::{div}
 :class: nbc-research-card
 
@@ -52,6 +51,7 @@ Combining computational imaging with electron microscopy experiments enables cha
 
 ::::
 
+<!-- Functional Materials card hidden; remove these comment markers to restore it.
 ::::{div}
 :class: nbc-research-card
 
