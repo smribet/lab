@@ -10,7 +10,7 @@ title: Publications and Patents
 
 **2026**
 
-- M. Palos, L. Spillane, G. Topore, Y. Li, D. Pesquera, C. Ophus, S. M. Ribet, M. S. Conroy, “Programmable Beam Control for Electron Energy-Loss Spectroscopy and Ptychography,” [*Microsc. Microanal.*](https://doi.org/10.1093/mam/ozag080), 32(4), ozag080, 2026.
+- M. Palos, L. Spillane, G. Topore, Y. Li, D. Pesquera, C. Ophus, S. M. Ribet, M. S. Conroy, “Programmable Beam Control for Electron Energy-Loss Spectroscopy and Ptychography,” [*Microsc. Microanal.*](https://doi.org/10.1093/mam/ozag080), 32(4), 2026.
 - G. Varnavides, W. P. M. de Kleijne, S. M. Ribet, “The ABCs of phase retrieval: Connecting the acronyms of scanning transmission electron microscopy,” [*MRS Bulletin*](https://doi.org/10.1557/s43577-026-01100-3), 51, 2026.
 - M. K. Wall, A. J. Pattison, E. S. Barnard, S. M. Ribet, P. Ercius, “TEM Agent: enhancing transmission electron microscopy with modern AI tools,” [*npj Comput. Mater.*](https://doi.org/10.1038/s41524-026-02103-z), 2026.
 - S. Lee, S. M. Ribet, A. R. C. McCray, A. Barnum, J. A. Dionne, and C. Ophus, “Unsupervised clustering algorithm for efficient processing of 4D-STEM and 5D-STEM data,” [*Microsc. Microanal.*](https://doi.org/10.1093/mam/ozag044), 32(3), 2026.
