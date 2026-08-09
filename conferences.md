@@ -4,6 +4,31 @@ title: Conferences
 
 # Conferences
 
+## IUCr Workshop in Diffractive Imaging
+
+::::{div}
+:class: nbc-resource-row
+
+:::{div}
+:class: nbc-resource-image
+
+```{image} assets/resources/IUCr.png
+:alt: methods
+```
+
+:::
+
+:::{div}
+:class: nbc-resource-copy
+
+At the 2026 Twenty-Seventh Congress and General Assembly of the International Union of Crystallography, Stephanie Ribet and Georgios Varnavides co-taught **Open-Source Converged Beam Electron Diffraction and Coherent Diffractive Imaging with Electrons**, a workshop on nanobeam 4D-STEM and phase retreival, covering practical approaches for diffraction-based imaging and analysis.
+
+**Link:** [Course materials](https://cbl.curve.space/articles/curious-beams-workshop-20260810-iucr-4dstem)
+
+:::
+
+::::
+
 ## M&M Short Course in 4D-STEM
 
 ::::{div}
