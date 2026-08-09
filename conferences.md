@@ -21,7 +21,13 @@ title: Conferences
 :::{div}
 :class: nbc-resource-copy
 
-At the 2026 Twenty-Seventh Congress and General Assembly of the International Union of Crystallography, Stephanie Ribet and Georgios Varnavides co-taught **Open-Source Converged Beam Electron Diffraction and Coherent Diffractive Imaging with Electrons**, a workshop on nanobeam 4D-STEM and phase retreival, covering practical approaches for diffraction-based imaging and analysis.
+**Conference:** Twenty-Seventh Congress and General Assembly of the International Union of Crystallography (IUCr 2026)
+
+**Workshop:** **Open-Source Converged Beam Electron Diffraction and Coherent Diffractive Imaging with Electrons**
+
+**Teachers:** Stephanie Ribet, Georgios Varnavides, and Colin Ophus
+
+**Description:** A workshop on nanobeam 4D-STEM and phase retrieval, covering practical approaches for diffraction-based imaging and analysis.
 
 **Link:** [Course materials](https://cbl.curve.space/articles/curious-beams-workshop-20260810-iucr-4dstem)
 
@@ -46,7 +52,13 @@ At the 2026 Twenty-Seventh Congress and General Assembly of the International Un
 :::{div}
 :class: nbc-resource-copy
 
-The Microscopy & Microanalysis 2026 Sunday Short Course X11, **Nanobeam Diffraction and 4DSTEM Analysis of Crystalline and Disordered Materials** taught by Stephanie Ribet, Colin Ophus, and Ian MacLaren, introduced approaches for collecting and analyzing nanobeam 4D-STEM diffraction data. The companion site provides notebooks and references for learning how to perform this analysis with open-source code.
+**Conference:** Microscopy & Microanalysis 2026 (M&M 2026)
+
+**Workshop:** Sunday Short Course X11, **Nanobeam Diffraction and 4DSTEM Analysis of Crystalline and Disordered Materials**
+
+**Teachers:** Stephanie Ribet, Colin Ophus, and Ian MacLaren
+
+**Description:** A short course on collecting and analyzing nanobeam 4D-STEM diffraction data, with companion notebooks and references for learning the open-souce code data analysis workflow.
 
 **Link:** [Course materials](https://ophusgroup.github.io/nanobeam-course/)
 
