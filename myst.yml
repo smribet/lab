@@ -25,7 +25,6 @@ project:
     - file: publications.md
     - file: open-source-code.md
     - file: conferences.md
-    - file: funding.md
     - file: gallery.md
 site:
   template: book-theme
@@ -59,5 +58,3 @@ site:
           url: /open-source-code
         - title: Conferences
           url: /conferences
-        - title: Funding
-          url: /funding
