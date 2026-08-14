@@ -4,6 +4,13 @@ site:
   hide_outline: true
 ---
 
+::::{div}
+:class: nbc-research-intro
+
+We work on cryogenic and computational electron microscopy, and we are also very interested in applying these approaches to functional material systems. Extending these methods to real-world samples often requires additional experimental and computational development, and much of this work happens through close collaboration. See the [User Highlights](./users.md#user-highlights) page for a few examples of how we have applied these methods in practice.
+::::
+
+
 :::::{div}
 :class: nbc-research-list
 
@@ -50,30 +57,5 @@ Combining computational imaging with electron microscopy experiments enables cha
 :::
 
 ::::
-
-<!-- Functional Materials card hidden; remove these comment markers to restore it.
-::::{div}
-:class: nbc-research-card
-
-:::{div}
-:class: nbc-research-image nbc-research-image-functional
-
-```{image} assets/research/functional.png
-:alt: Electron microscopy examples of functional materials and their nanoscale structures
-```
-
-:::
-
-## EM for Functional Materials
-
-:::{div}
-:class: nbc-research-copy
-
-Advanced electron microscopy technique development often starts with model systems. We are pushing these approaches forward by applying advanced electron microscopy techniques to challenges related to complex real-world materials. Bridging this gap often requires the development of new experimental and computational protocols. We are interested in a variety of applications, with an emphasis on energy technologies, critical materials recovery, quantum materials, microelectronics, and materials for extreme environments.
-
-:::
-
-::::
--->
 
 :::::

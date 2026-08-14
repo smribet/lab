@@ -361,6 +361,25 @@ article:has(.nbc-home-banner) > :not(.nbc-home-banner) {
 }
 
 /* ---------- Research themes ---------- */
+.nbc-research-intro {
+  width: calc(100% + 10rem);
+  margin: 0 0 2rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 0.35rem solid var(--nbc-accent);
+  border-radius: 0.65rem;
+  background: linear-gradient(135deg, rgba(220, 236, 243, 0.9), rgba(255, 255, 255, 0.92));
+  box-shadow: 0 0.2rem 0.9rem rgba(0, 0, 0, 0.06);
+}
+html.dark .nbc-research-intro {
+  background: linear-gradient(135deg, rgba(45, 111, 145, 0.2), rgba(15, 24, 31, 0.9));
+}
+.nbc-research-intro p {
+  margin: 0;
+  line-height: 1.75;
+}
+.nbc-research-intro p + p {
+  margin-top: 0.85rem;
+}
 .nbc-research-list {
   display: grid;
   width: calc(100% + 10rem);
@@ -376,8 +395,8 @@ article:has(.nbc-home-banner) > :not(.nbc-home-banner) {
   overflow: hidden;
   border: 1px solid rgba(0, 63, 92, 0.2);
   border-radius: 0.75rem;
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0.35rem 1.1rem rgba(0, 0, 0, 0.08);
 }
 .nbc-research-card:nth-child(even) {
   grid-template-columns: minmax(0, 3fr) minmax(16rem, 2fr);
@@ -434,7 +453,7 @@ html.dark .nbc-research-image {
   grid-row: 2;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 2rem;
+  padding: 0 2rem 2rem;
 }
 .nbc-research-card > h2,
 .nbc-research-card > h3 {
@@ -442,10 +461,10 @@ html.dark .nbc-research-image {
   grid-column: 2;
   grid-row: 1;
   margin: 0;
-  padding: 2rem 2rem 0.65rem;
+  padding: 2rem 2rem 0.85rem;
   color: var(--nbc-accent);
-  font-size: 1.35rem;
-  line-height: 1.35;
+  font-size: 1.45rem;
+  line-height: 1.25;
 }
 .nbc-research-card:nth-child(even) > h2,
 .nbc-research-card:nth-child(even) > h3,
@@ -458,9 +477,14 @@ html.dark .nbc-research-image {
 }
 .nbc-research-copy p {
   margin: 0;
-  line-height: 1.65;
+  line-height: 1.75;
 }
 @media (max-width: 700px) {
+  .nbc-research-intro {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+  }
   .nbc-research-list {
     width: 100%;
   }
