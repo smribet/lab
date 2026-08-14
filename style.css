@@ -845,7 +845,30 @@ html.dark .nbc-user-highlight-card {
   background: var(--nbc-highlight-soft);
   border-radius: 0 0.5rem 0.5rem 0;
 }
+.nbc-proposal-callout {
+  width: calc(100% + 10rem);
+  margin: 0 0 1.25rem;
+  padding: 0.95rem 1.1rem;
+  border: 1px solid rgba(0, 63, 92, 0.18);
+  border-radius: 0.7rem;
+  background: linear-gradient(135deg, rgba(220, 236, 243, 0.92), rgba(255, 255, 255, 0.96));
+  color: var(--nbc-accent);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+  box-shadow: 0 0.2rem 0.85rem rgba(0, 0, 0, 0.05);
+}
+html.dark .nbc-proposal-callout {
+  border-color: rgba(0, 179, 255, 0.22);
+  background: linear-gradient(135deg, rgba(45, 111, 145, 0.24), rgba(15, 24, 31, 0.82));
+}
+.nbc-proposal-callout p {
+  margin: 0;
+}
 @media (max-width: 700px) {
+  .nbc-proposal-callout {
+    width: 100%;
+  }
   .nbc-resource-row {
     grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
