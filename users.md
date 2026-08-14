@@ -5,13 +5,6 @@ site:
 ---
 
 ::::{div}
-:class: nbc-proposal-callout
-
-**Next Proposal Call:** 3/1/26 - 3/31/26
-
-::::
-
-::::{div}
 :class: nbc-resource-row nbc-user-program-row
 
 :::{div}
