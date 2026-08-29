@@ -15,21 +15,12 @@ Reach out to Stephanie to learn more about current openings for internships and 
 :class: nbc-team-profile-row
 
 ::::{div}
-:class: nbc-team-card
+:class: nbc-team-card nbc-team-profile-card
 
 ```{image} assets/people/Ribet.jpg
 :alt: Stephanie M. Ribet
 :class: nbc-team-photo
 ```
-
-### Stephanie M. Ribet
-
-:::{div}
-:class: nbc-team-contact
-
-**Contact:** sribet [at] lbl\.gov
-
-:::
 
 :::{div}
 :class: nbc-team-links
@@ -40,12 +31,25 @@ Reach out to Stephanie to learn more about current openings for internships and 
 
 ::::
 
-:::{div}
-:class: nbc-team-bio
+::::{div}
+:class: nbc-team-profile-copy
 
-Stephanie (Steph) Ribet graduated from Princeton University with a degree in chemistry and a minor in materials science in 2016. She worked as a chemist at Dyson/Sakti3 from 2016 to 2018 on solid-state battery development. She completed her Ph.D. in the Department of Materials Science & Engineering at Northwestern University with Vinayak Dravid in 2023. At Northwestern, she designed nanocomposite sponges and characterized these structures at multiple length scales with microscopy and spectroscopy techniques. In the final year of her graduate work, Stephanie joined the Molecular Foundry as an Office of Science Graduate Student Research Program Fellow to develop scanning transmission electron microscopy methods for soft and hybrid materials. Building on this research, she continued at Berkeley Lab as a postdoc working with Colin Ophus and Karen Bustillo on the experimental and computational development of multidimensional high-resolution electron microscopy methods. She began as a Staff Scientist at the Molecular Foundry in 2025.
+### Stephanie M. Ribet
+
+:::{div}
+:class: nbc-team-profile-bio
+
+**Contact:** sribet [at] lbl\.gov
 
 :::
+
+:::{div}
+:class: nbc-team-profile-bio
+
+**Bio:**  Stephanie (Steph) Ribet graduated from Princeton University with a degree in chemistry and a minor in materials science in 2016. She worked as a chemist at Dyson/Sakti3 from 2016 to 2018 on solid-state battery development. She completed her Ph.D. in the Department of Materials Science & Engineering at Northwestern University with Vinayak Dravid in 2023. At Northwestern, she designed nanocomposite sponges and characterized these structures at multiple length scales with microscopy and spectroscopy techniques. In the final year of her graduate work, Stephanie joined the Molecular Foundry as an Office of Science Graduate Student Research Program Fellow to develop scanning transmission electron microscopy methods for soft and hybrid materials. Building on this research, she continued at Berkeley Lab as a postdoc working with Colin Ophus and Karen Bustillo on the experimental and computational development of multidimensional high-resolution electron microscopy methods. She began as a Staff Scientist at the Molecular Foundry in 2025.
+
+:::
+::::
 
 :::::
 

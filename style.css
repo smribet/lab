@@ -168,6 +168,7 @@ article a:not(.myst-home-link),
 article .link,
 article .hover-link {
   color: var(--nbc-accent) !important;
+  text-decoration-color: var(--nbc-highlight) !important;
 }
 
 /* The theme crops hover-preview thumbnails to a 150px-tall banner. Keep the
@@ -209,6 +210,9 @@ article:has(> #maped):has(> #py4dstem) .myst-bibliography {
 .myst-toc-item.active,
 .myst-toc-item-exact {
   background-color: var(--nbc-highlight-soft) !important;
+  border-left-color: var(--nbc-highlight) !important;
+  border-inline-start-color: var(--nbc-highlight) !important;
+  text-decoration-color: var(--nbc-highlight) !important;
 }
 .myst-toc-item:focus,
 .myst-toc-item:focus-visible {
@@ -297,6 +301,9 @@ html.dark .myst-primary-sidebar-toc .dark\:text-blue-200 {
 .myst-primary-sidebar-toc a.myst-toc-item.active {
   color: var(--nbc-accent) !important;
   font-weight: 700;
+  border-left-color: var(--nbc-highlight) !important;
+  border-inline-start-color: var(--nbc-highlight) !important;
+  text-decoration-color: var(--nbc-highlight) !important;
 }
 /* The site title is already in the top bar; drop the duplicate
    root entry at the top of the sidebar. */
@@ -431,8 +438,16 @@ html.dark .nbc-research-image {
   max-height: 18rem;
   object-fit: contain;
 }
-.nbc-research-image-cryo img,
-.nbc-research-image-computational img,
+.nbc-research-image-cryo img {
+  width: 76.5%;
+  height: auto;
+  max-height: none;
+}
+.nbc-research-image-computational img {
+  width: 81%;
+  height: auto;
+  max-height: none;
+}
 .nbc-research-image-functional img {
   width: 90%;
   height: auto;
@@ -580,6 +595,29 @@ html.dark .nbc-gallery-grid .nbc-gallery-image {
 .nbc-team-bio p:first-child {
   margin-top: 0;
 }
+.nbc-team-profile-copy {
+  align-self: start;
+  max-width: 46rem;
+  font-size: 0.925rem;
+  line-height: 1.65;
+}
+.nbc-team-profile-copy h3 {
+  margin: 0 0 0.45rem;
+  color: var(--nbc-accent);
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+.nbc-team-profile-contact {
+  margin-bottom: 1rem;
+  font-size: 0.82rem;
+}
+.nbc-team-profile-contact p,
+.nbc-team-profile-bio p {
+  margin: 0;
+}
+.nbc-team-profile-bio p + p {
+  margin-top: 0.85rem;
+}
 @media (max-width: 700px) {
   .nbc-team-profile-row {
     width: 100%;
@@ -648,6 +686,9 @@ html.dark .nbc-team-card {
   flex-wrap: wrap;
   gap: 0.35rem;
   padding: 0 1.1rem 1.1rem;
+}
+.nbc-team-profile-card .nbc-team-links {
+  padding-top: 0.85rem;
 }
 .nbc-team-links p {
   display: contents;
@@ -845,6 +886,55 @@ html.dark .nbc-user-highlight-card {
   background: var(--nbc-highlight-soft);
   border-radius: 0 0.5rem 0.5rem 0;
 }
+.nbc-conference-archive {
+  margin: 2.5rem 0 0;
+  border: 1px solid rgba(0, 63, 92, 0.14);
+  border-radius: 0.8rem;
+  background: var(--nbc-highlight-soft);
+}
+html.dark .nbc-conference-archive {
+  border-color: rgba(0, 179, 255, 0.22);
+  background: rgba(45, 111, 145, 0.14);
+}
+.nbc-conference-archive summary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  padding: 1rem 1.1rem;
+  cursor: pointer;
+  color: var(--nbc-accent);
+  font-size: 1rem;
+  font-weight: 700;
+  list-style: none;
+}
+.nbc-conference-archive summary::-webkit-details-marker {
+  display: none;
+}
+.nbc-conference-archive summary::before {
+  content: "";
+  width: 0.7rem;
+  height: 0.7rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.18s ease;
+}
+.nbc-conference-archive[open] summary::before {
+  transform: rotate(45deg);
+}
+.nbc-conference-archive summary a {
+  margin-left: auto;
+  font-size: 0.92rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.nbc-conference-archive > div {
+  padding: 0 1.1rem 0.25rem;
+}
+.nbc-conference-archive > div > .nbc-resource-row {
+  margin-top: 0;
+}
 .nbc-proposal-callout {
   width: calc(100% + 10rem);
   margin: 0 0 1.25rem;
@@ -882,6 +972,12 @@ html.dark .nbc-proposal-callout {
   .nbc-user-highlights-grid {
     width: 100%;
     grid-template-columns: minmax(0, 1fr);
+  }
+  .nbc-conference-archive summary a {
+    margin-left: 1.4rem;
+  }
+  .nbc-conference-archive > div {
+    padding: 0 1rem 0.25rem;
   }
   .nbc-resource-image-placeholder,
   .nbc-resource-image,
@@ -1033,6 +1129,14 @@ a.nbc-search-hit.active {
    against the top bar. */
 article {
   padding-top: 1.75rem;
+}
+
+@media (min-width: 1024px) {
+  article.article-grid.content > :not(.nbc-home-banner) {
+    width: calc(100% + 13rem);
+    margin-left: 1.5rem;
+    max-width: none;
+  }
 }
 
 /* Instructors label on the landing page */

@@ -38,6 +38,7 @@ site:
     logo_text: Ribet
     favicon: ./assets/logo/frog_logo.png
     folders: true
+    hide_outline: true
     outline_maxdepth: 2
     hide_toc: true
     hide_footer_links: true
@@ -46,15 +47,15 @@ site:
       url: /team
     - title: Research
       url: /research
-    - title: User Program
+    - title: Users
       url: /users
     - title: Publications
       url: /publications
-    - title: Gallery
-      url: /gallery
     - title: Resources
       children:
         - title: Open-Source Code
           url: /open-source-code
-        - title: Conferences
+        - title: Conferences & Tutorials
           url: /conferences
+        - title: Gallery
+          url: /gallery
