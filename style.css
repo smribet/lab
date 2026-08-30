@@ -1069,6 +1069,7 @@ body {
   appearance: none;
 }
 html.dark .nbc-search input {
+  color: rgb(245, 245, 244);
   background: rgb(55, 65, 81);
   border-color: rgb(75, 85, 99);
 }
@@ -1091,12 +1092,14 @@ html.dark .nbc-search input {
   max-height: 70vh;
   overflow-y: auto;
   padding: 0.25rem;
+  color: rgb(17, 24, 39);
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.5rem;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
 }
 html.dark .nbc-search-results {
+  color: rgb(245, 245, 244);
   background: rgb(28, 25, 23);
   border-color: rgba(255, 255, 255, 0.18);
 }
@@ -1118,10 +1121,14 @@ a.nbc-search-hit.active {
 }
 .nbc-search-hit-text {
   font-size: 0.78rem;
+  color: currentColor;
   opacity: 0.75;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+html.dark .nbc-search-hit-text {
+  opacity: 0.82;
 }
 
 /* ---------- Article heading spacing ----------
