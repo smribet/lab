@@ -1139,10 +1139,14 @@ article {
 }
 
 @media (min-width: 1024px) {
+  :root {
+    --nbc-content-shift: -2rem;
+  }
+
   article.article-grid.content > :not(.nbc-home-banner) {
     width: calc(100% + 13rem);
-    margin-left: 1.5rem;
     max-width: none;
+    transform: translateX(var(--nbc-content-shift));
   }
 }
 
