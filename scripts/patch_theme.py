@@ -1,5 +1,5 @@
 """Patch the downloaded book-theme template: keep top-level TOC sections
-expanded, and replace the dialog-based search with a flat top-bar input.
+expanded, replace dialog search with a flat input, and repair mobile navigation.
 
 Ported from quantem-docs. The stock theme opens a sidebar section only
 while it contains the active page (and re-collapses it on navigation),
@@ -169,17 +169,71 @@ _RUNTIME = """
   }
   function tick(){
     build(document.querySelector('button.myst-search-bar'));
+    syncMenu();
+  }
+  function mobile(){return window.matchMedia('(max-width: 1023px)').matches;}
+  function menu(){return document.querySelector('.myst-top-nav-menu-button');}
+  function sidebar(){return document.querySelector('div.myst-primary-sidebar');}
+  function menuOpen(){
+    var side=sidebar();
+    return mobile()&&side&&side.getClientRects().length>0;
+  }
+  function closeMenu(){if(menuOpen()&&menu())menu().click();}
+  function syncMenu(){
+    var button=menu(),side=sidebar(),header=document.querySelector('.myst-top-nav');
+    if(!button||!side||!header)return;
+    side.id='nbc-mobile-navigation';
+    button.setAttribute('aria-controls',side.id);
+    button.setAttribute('aria-expanded',String(!!menuOpen()));
+    button.setAttribute('aria-label',menuOpen()?'Close Menu':'Open Menu');
+    document.documentElement.style.setProperty('--nbc-header-height',header.offsetHeight+'px');
+    side.querySelectorAll('.myst-primary-sidebar-item-title').forEach(function(label){
+      var toggle=label.parentElement.querySelector('button');
+      if(!toggle)return;
+      label.setAttribute('role','button');
+      label.setAttribute('aria-expanded',toggle.getAttribute('aria-expanded')||'false');
+      var controls=toggle.getAttribute('aria-controls');
+      if(controls)label.setAttribute('aria-controls',controls);
+    });
   }
   function start(){
     tick();
-    // React hydration replaces these nodes, so keep re-checking for a while
-    var n=0,iv=setInterval(function(){tick();if(++n>40)clearInterval(iv);},250);
+    // Keep the theme's React state in charge of opening/closing the menu.
+    document.addEventListener('click',function(ev){
+      if(!mobile()||!ev.target.closest)return;
+      var side=sidebar(),button=menu();
+      if(!side||!button||button.contains(ev.target))return;
+      if(side.contains(ev.target)){
+        var label=ev.target.closest('.myst-primary-sidebar-item-title');
+        if(label){
+          // The theme gives grouping labels an empty URL, which sends users
+          // back to the home page. Only expand their existing disclosure.
+          var toggle=label.parentElement.querySelector('button');
+          if(toggle){ev.preventDefault();ev.stopPropagation();toggle.click();}
+        }else if(ev.target.closest('a[href]')&&!ev.metaKey&&!ev.ctrlKey&&!ev.shiftKey&&!ev.altKey){
+          closeMenu();
+        }
+      }else{closeMenu();}
+    },true);
+    document.addEventListener('keydown',function(ev){
+      if(ev.key==='Escape'&&menuOpen()){
+        closeMenu();menu().focus();
+      }else if(ev.key===' '&&ev.target.matches('.myst-primary-sidebar-item-title[role="button"]')){
+        ev.preventDefault();ev.target.click();
+      }
+    });
+    window.addEventListener('resize',syncMenu);
+    if(window.ResizeObserver){
+      var header=document.querySelector('.myst-top-nav');
+      if(header)new ResizeObserver(syncMenu).observe(header);
+    }
     new MutationObserver(function(){tick();}).observe(
-      document.documentElement,{subtree:true,childList:true});
+      document.documentElement,{subtree:true,childList:true,attributes:true,
+        attributeFilter:['class','data-state']});
   }
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',start);
-  }else{start();}
+  // The entry component signals its first committed render. Mutating the
+  // navbar at DOMContentLoaded races React hydration on slower phones.
+  document.addEventListener('nbc:hydrated',start,{once:true});
 })();
 """
 
@@ -243,10 +297,12 @@ def main():
         print("already patched: build/index.js (search runtime)")
     elif "nbc-runtime" in bsrc:  # older runtime: swap it out
         new_bsrc, n = re.subn(
-            r'"<script>[^"]*nbc-runtime[^"]*</script></body>"',
+            r'"<script>/\*nbc-runtime-[^*]+\*/(?:\\.|[^"\\])*</script></body>"',
             lambda m: tag,
             bsrc,
         )
+        if n != 1:
+            sys.exit("previous runtime injection not found; theme version changed?")
         with open(server_bundle, "w") as f:
             f.write(new_bsrc)
         total += n
@@ -268,22 +324,38 @@ def main():
         print(f"patched build/index.js (search runtime, {n} site)")
     # rename the patched entry + manifest so browsers that cached the stock
     # bundles (1-year immutable) fetch the patched versions
-    rename = [("entry.client-PCJPW7TK", "entry.client-NBCRT1"),
-              ("manifest-C732C875", "manifest-NBCRT1")]
+    rename = [("entry.client-PCJPW7TK", "entry.client-NBCRT2"),
+              ("manifest-C732C875", "manifest-NBCRT2")]
     pub = os.path.join(THEME, "public", "build")
-    if not os.path.exists(os.path.join(pub, "entry.client-NBCRT1.js")):
+    if not os.path.exists(os.path.join(pub, "entry.client-NBCRT2.js")):
         import shutil
         for old, new in rename:
             shutil.copyfile(
                 os.path.join(pub, f"{old}.js"), os.path.join(pub, f"{new}.js")
             )
+        entry = os.path.join(pub, "entry.client-NBCRT2.js")
+        with open(entry) as f:
+            src = f.read()
+        root = "children:(0,e.jsx)(r,{})"
+        if src.count(root) != 1:
+            sys.exit("client hydration entry not found; theme version changed?")
+        src = src.replace(root, "children:(0,e.jsx)(nbcReady,{})")
+        src += (
+            '\nfunction nbcReady(){t.useEffect(()=>{'
+            'document.dispatchEvent(new Event("nbc:hydrated"))},[]);'
+            'return (0,e.jsx)(r,{})}\n'
+        )
+        with open(entry, "w") as f:
+            f.write(src)
         for path in [os.path.join(THEME, "build", "index.js")] + [
-            os.path.join(pub, "manifest-NBCRT1.js")
+            os.path.join(pub, "manifest-NBCRT2.js")
         ]:
             with open(path) as f:
                 s = f.read()
             for old, new in rename:
                 s = s.replace(old, new)
+            s = s.replace("entry.client-NBCRT1", "entry.client-NBCRT2")
+            s = s.replace("manifest-NBCRT1", "manifest-NBCRT2")
             with open(path, "w") as f:
                 f.write(s)
         print("renamed entry.client + manifest (cache bust)")

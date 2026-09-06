@@ -161,6 +161,42 @@ html.dark {
   margin-left: auto !important;
 }
 
+/* Keep the mobile menu below its toggle and within the visible viewport. */
+@media (max-width: 1023px) {
+  .myst-top-nav {
+    z-index: 70;
+  }
+  div.myst-primary-sidebar {
+    top: var(--nbc-header-height, 68px) !important;
+    height: calc(100vh - var(--nbc-header-height, 68px));
+    height: calc(100dvh - var(--nbc-header-height, 68px));
+    z-index: 65 !important;
+    box-shadow: 8px 8px 20px rgb(0 0 0 / 15%);
+    overscroll-behavior: contain;
+  }
+  .myst-primary-sidebar-nav {
+    padding-top: 0.5rem;
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  .myst-primary-sidebar-topnav a,
+  .myst-primary-sidebar-topnav button,
+  .myst-top-nav-menu-button,
+  .myst-theme-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  .myst-top-nav-bar > :last-child {
+    min-width: 0;
+  }
+  .myst-primary-sidebar-item-title[role="button"] {
+    cursor: pointer;
+  }
+  .myst-top-nav .nbc-search input {
+    /* A readable input size also prevents Safari's focus zoom. */
+    font-size: 16px;
+  }
+}
+
 /* ---------- Article links ----------
    Scoped to <article> so the home-link and navbar controls keep
    their own colors. */
