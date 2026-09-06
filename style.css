@@ -161,36 +161,67 @@ html.dark {
   margin-left: auto !important;
 }
 
-/* Keep the mobile menu below its toggle and within the visible viewport. */
+/* Native disclosures remain usable while the app scripts load. The header
+   anchors the panel so it follows the actual header height without JavaScript. */
+.nbc-mobile-menu { display: none; }
 @media (max-width: 1023px) {
-  .myst-top-nav {
-    z-index: 70;
-  }
-  div.myst-primary-sidebar {
-    top: var(--nbc-header-height, 68px) !important;
-    height: calc(100vh - var(--nbc-header-height, 68px));
-    height: calc(100dvh - var(--nbc-header-height, 68px));
-    z-index: 65 !important;
-    box-shadow: 8px 8px 20px rgb(0 0 0 / 15%);
-    overscroll-behavior: contain;
-  }
-  .myst-primary-sidebar-nav {
-    padding-top: 0.5rem;
-    padding-bottom: max(1rem, env(safe-area-inset-bottom));
-  }
-  .myst-primary-sidebar-topnav a,
-  .myst-primary-sidebar-topnav button,
-  .myst-top-nav-menu-button,
-  .myst-theme-button {
-    min-height: 44px;
+  .myst-top-nav { z-index: 70; }
+  div.myst-primary-sidebar { display: none !important; }
+  .nbc-mobile-menu { display: block; }
+  .nbc-mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-width: 44px;
-  }
-  .myst-top-nav-bar > :last-child {
-    min-width: 0;
-  }
-  .myst-primary-sidebar-item-title[role="button"] {
+    min-height: 44px;
+    color: var(--nbc-accent);
+    font-size: 1.5rem;
     cursor: pointer;
+    list-style: none;
+    border-radius: 0.4rem;
   }
+  .nbc-mobile-menu-toggle::-webkit-details-marker { display: none; }
+  .nbc-mobile-menu[open] > summary {
+    background: var(--nbc-highlight-soft);
+  }
+  .nbc-mobile-menu-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: min(22rem, 100vw);
+    max-height: calc(100vh - 5rem);
+    max-height: calc(100dvh - 5rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0.75rem 1rem max(1rem, env(safe-area-inset-bottom));
+    background: #fff;
+    color: var(--nbc-accent);
+    box-shadow: 4px 8px 20px rgb(0 0 0 / 15%);
+  }
+  html.dark .nbc-mobile-menu-panel { background: #1c1917; }
+  .nbc-mobile-menu-panel ul { margin: 0; padding: 0; list-style: none; }
+  .nbc-mobile-menu-panel a,
+  .nbc-mobile-group > summary {
+    display: block;
+    min-height: 44px;
+    padding: 0.65rem 0.75rem;
+    border-radius: 0.4rem;
+    color: inherit;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .nbc-mobile-group > summary { display: list-item; list-style: disclosure-closed inside; }
+  .nbc-mobile-group[open] > summary { list-style-type: disclosure-open; }
+  .nbc-mobile-group > ul { padding-left: 1rem; }
+  .nbc-mobile-menu-panel a:hover,
+  .nbc-mobile-menu-panel summary:hover { background: var(--nbc-highlight-soft); }
+  .nbc-mobile-menu a:focus-visible,
+  .nbc-mobile-menu summary:focus-visible {
+    outline: 2px solid var(--nbc-highlight);
+    outline-offset: 2px;
+  }
+  .myst-theme-button { min-width: 44px; min-height: 44px; }
+  .myst-top-nav-bar > :last-child { min-width: 0; }
   .myst-top-nav .nbc-search input {
     /* A readable input size also prevents Safari's focus zoom. */
     font-size: 16px;

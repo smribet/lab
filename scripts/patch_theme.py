@@ -17,6 +17,7 @@ import hashlib
 import os
 import re
 import sys
+from pathlib import Path
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 THEME = os.path.normpath(
@@ -167,70 +168,30 @@ _RUNTIME = """
       }
     },true);
   }
-  function tick(){
-    build(document.querySelector('button.myst-search-bar'));
-    syncMenu();
-  }
-  function mobile(){return window.matchMedia('(max-width: 1023px)').matches;}
-  function menu(){return document.querySelector('.myst-top-nav-menu-button');}
-  function sidebar(){return document.querySelector('div.myst-primary-sidebar');}
-  function menuOpen(){
-    var side=sidebar();
-    return mobile()&&side&&side.getClientRects().length>0;
-  }
-  function closeMenu(){if(menuOpen()&&menu())menu().click();}
-  function syncMenu(){
-    var button=menu(),side=sidebar(),header=document.querySelector('.myst-top-nav');
-    if(!button||!side||!header)return;
-    side.id='nbc-mobile-navigation';
-    button.setAttribute('aria-controls',side.id);
-    button.setAttribute('aria-expanded',String(!!menuOpen()));
-    button.setAttribute('aria-label',menuOpen()?'Close Menu':'Open Menu');
-    document.documentElement.style.setProperty('--nbc-header-height',header.offsetHeight+'px');
-    side.querySelectorAll('.myst-primary-sidebar-item-title').forEach(function(label){
-      var toggle=label.parentElement.querySelector('button');
-      if(!toggle)return;
-      label.setAttribute('role','button');
-      label.setAttribute('aria-expanded',toggle.getAttribute('aria-expanded')||'false');
-      var controls=toggle.getAttribute('aria-controls');
-      if(controls)label.setAttribute('aria-controls',controls);
-    });
-  }
+  function tick(){build(document.querySelector('button.myst-search-bar'));}
   function start(){
     tick();
-    // Keep the theme's React state in charge of opening/closing the menu.
-    document.addEventListener('click',function(ev){
-      if(!mobile()||!ev.target.closest)return;
-      var side=sidebar(),button=menu();
-      if(!side||!button||button.contains(ev.target))return;
-      if(side.contains(ev.target)){
-        var label=ev.target.closest('.myst-primary-sidebar-item-title');
-        if(label){
-          // The theme gives grouping labels an empty URL, which sends users
-          // back to the home page. Only expand their existing disclosure.
-          var toggle=label.parentElement.querySelector('button');
-          if(toggle){ev.preventDefault();ev.stopPropagation();toggle.click();}
-        }else if(ev.target.closest('a[href]')&&!ev.metaKey&&!ev.ctrlKey&&!ev.shiftKey&&!ev.altKey){
-          closeMenu();
-        }
-      }else{closeMenu();}
-    },true);
-    document.addEventListener('keydown',function(ev){
-      if(ev.key==='Escape'&&menuOpen()){
-        closeMenu();menu().focus();
-      }else if(ev.key===' '&&ev.target.matches('.myst-primary-sidebar-item-title[role="button"]')){
-        ev.preventDefault();ev.target.click();
-      }
-    });
-    window.addEventListener('resize',syncMenu);
-    if(window.ResizeObserver){
-      var header=document.querySelector('.myst-top-nav');
-      if(header)new ResizeObserver(syncMenu).observe(header);
-    }
-    new MutationObserver(function(){tick();}).observe(
-      document.documentElement,{subtree:true,childList:true,attributes:true,
-        attributeFilter:['class','data-state']});
+    new MutationObserver(tick).observe(
+      document.documentElement,{subtree:true,childList:true});
   }
+  // Navigation uses native disclosures and links. These optional conveniences
+  // run immediately; opening the menu and following links need no JavaScript.
+  function menu(){return document.querySelector('details.nbc-mobile-menu');}
+  document.addEventListener('click',function(ev){
+    var nav=menu();
+    if(nav&&nav.open&&!nav.contains(ev.target))nav.open=false;
+  },true);
+  document.addEventListener('keydown',function(ev){
+    var nav=menu();
+    if(ev.key==='Escape'&&nav&&nav.open){
+      nav.open=false;
+      nav.querySelector('summary').focus();
+    }
+  });
+  window.addEventListener('resize',function(){
+    var nav=menu();
+    if(nav&&window.matchMedia('(min-width: 1024px)').matches)nav.open=false;
+  });
   // The entry component signals its first committed render. Mutating the
   // navbar at DOMContentLoaded races React hydration on slower phones.
   document.addEventListener('nbc:hydrated',start,{once:true});
@@ -268,6 +229,76 @@ def patched(src):
         )
 
     return PATTERN.subn(repl, src)
+
+
+def patch_mobile_navigation():
+    component = Path(HERE, "mobile_navigation.js").read_text()
+    helpers = [
+        {"NBC_JSX": "$p", "NBC_CONFIG": "py", "NBC_BASE": "pg", "NBC_URL": "Zm"},
+        {"NBC_JSX": "Tt", "NBC_CONFIG": "_r", "NBC_BASE": "si", "NBC_URL": "$t"},
+    ]
+    button = re.compile(
+        r'\(0,([\w$]+)\.jsxs\)\("button",\{className:"myst-top-nav-menu-button'
+        r'.*?children:"Open Menu"\}\)\]\}\)'
+    )
+    for path, symbols in zip(TARGETS, helpers):
+        src = Path(path).read_text()
+        if "/*nbc-native-menu-start*/" not in src:
+            src, count = button.subn(
+                lambda m: f'(0,{m[1]}.jsx)(nbcMobileNavigation,{{}})', src
+            )
+            if count != 1:
+                sys.exit(f"mobile navigation button not found in {path}; theme changed?")
+        else:
+            src = re.sub(
+                r'/\*nbc-native-menu-start\*/.*?/\*nbc-native-menu-end\*/',
+                '', src, flags=re.S,
+            ).rstrip()
+        rendered = re.sub(r'NBC_\w+', lambda m: symbols[m[0]], component)
+        Path(path).write_text(
+            src.rstrip() + '\n/*nbc-native-menu-start*/\n' + rendered
+            + '/*nbc-native-menu-end*/\n'
+        )
+    print("patched native mobile navigation (server and client)")
+
+
+def cache_bust_navigation():
+    """Version the changed bundles AND their importers, including the manifest.
+
+    Renaming just the entry leaves cached shared chunks in use. Keep canonical
+    files so repeated patches can generate a fresh, consistent dependency graph.
+    """
+    pub = Path(THEME, "public", "build")
+    sources = {
+        p.name: (p, p.read_text()) for p in pub.rglob("*.js")
+        if "-nbc-" not in p.name
+    }
+    changed = {"chunk-RUUCG5OS.js", "entry.client-NBCRT2.js"}
+    version = hashlib.sha256(
+        (INLINER + ''.join(sources[name][1] for name in sorted(changed))).encode()
+    ).hexdigest()[:12]
+    importers = {}
+    for name, (_, src) in sources.items():
+        for dependency in re.findall(r'[\w.$-]+\.js', src):
+            importers.setdefault(dependency, set()).add(name)
+    pending = list(changed)
+    while pending:
+        for name in importers.get(pending.pop(), set()) - changed:
+            changed.add(name)
+            pending.append(name)
+    names = {name: name[:-3] + f"-nbc-{version}.js" for name in changed}
+    pattern = re.compile(r'[\w.$-]+\.js')
+
+    def rewrite(src):
+        src = re.sub(r'-nbc-[0-9a-f]{12}(?=\.js)', '', src)
+        return pattern.sub(lambda m: names.get(m[0], m[0]), src)
+
+    for name in sorted(changed):
+        path, src = sources[name]
+        path.with_name(names[name]).write_text(rewrite(src))
+    server = Path(THEME, "build", "index.js")
+    server.write_text(rewrite(server.read_text()))
+    print(f"versioned {len(changed)} navigation bundles and importers ({version})")
 
 
 def main():
@@ -360,6 +391,14 @@ def main():
                 f.write(s)
         print("renamed entry.client + manifest (cache bust)")
 
+    # Hydration can start as soon as the scripts arrive; navigation does not
+    # depend on it, and search need not wait for an idle browser either.
+    entry = Path(pub, "entry.client-NBCRT2.js")
+    entry.write_text(entry.read_text().replace(
+        "window.requestIdleCallback?window.requestIdleCallback(d):window.setTimeout(d,1);",
+        "d();",
+    ))
+
     for path in TARGETS:
         with open(path) as f:
             src = f.read()
@@ -373,6 +412,8 @@ def main():
             f.write(out)
         total += n
         print(f"patched {os.path.relpath(path, THEME)} ({n} site)")
+    patch_mobile_navigation()
+    cache_bust_navigation()
     print(f"done ({total} replacements)")
 
 
