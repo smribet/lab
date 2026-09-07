@@ -4,6 +4,11 @@ site:
   hide_outline: true
 ---
 
+:::{dropdown} Fall call for proposals is now open
+The current call for [proposals](https://foundry.lbl.gov/user-program/user-program-overview/) is open until 9/30/2026. If you are interested in applying, reach out to [Stephanie](./team.md) to discuss your proposal and the application process.
+:::
+
+
 ::::{div}
 :class: nbc-resource-row nbc-user-program-row
 
