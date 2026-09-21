@@ -73,7 +73,7 @@ Reach out to Stephanie to learn more about current openings for internships and 
 :::{div}
 :class: nbc-team-note
 
-Starting September 2026
+**Contact:** nhagopian [at] lbl\.gov
 
 :::
 
@@ -92,7 +92,14 @@ Starting September 2026
 :::{div}
 :class: nbc-team-note
 
-Starting September 2026
+**Contact:** hni [at] lbl\.gov
+
+:::
+
+:::{div}
+:class: nbc-team-links
+
+[Google Scholar](https://scholar.google.com/citations?user=c5KhaRgAAAAJ&hl=en)
 
 :::
 
@@ -135,7 +142,7 @@ Starting September 2026
 
 ---
 
-## Alumni
+## Former Group Members
 
 ::::{div}
 :class: nbc-team-grid
