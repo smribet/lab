@@ -53,7 +53,10 @@ def theme_targets():
         ):
             candidates.append(path)
     if len(candidates) != 1:
-        sys.exit("navigation bundle not uniquely identified; theme version changed?")
+        sys.exit(
+            f"expected one navigation bundle in {shared}, found {len(candidates)}; "
+            "theme version changed?"
+        )
     return [str(Path(THEME, "build", "index.js")), str(candidates[0])]
 
 # Flat top-bar search runtime (replaces the theme's dialog search).
@@ -237,39 +240,55 @@ INLINER = INLINER_MARK + _RUNTIME
 # bundles (minified variable names differ between them):
 #   [s,o]=X.useState(r); useEffect(()=>{n.state==="idle"&&o(r)},[n.state]);
 #   let a=fn(e,i,t); return !i.children ...
+# Newer themes recompute the active heading in the effect and also depend
+# on pathname. Preserve both the reset expression and dependency list.
 PATTERN = re.compile(
     r'\[(\w),(\w)\]=([\w$]+(?:\.default)?)\.useState\((\w)\);'
-    r'\(0,([\w$]+)\.useEffect\)\(\(\)=>\{(\w)\.state==="idle"&&\2\(\4\)\},'
-    r'\[\6\.state\]\);let (\w)=[\w$]+\(([^)]*)\);return!(\w)\.c'
+    r'\(0,([\w$]+)\.useEffect\)\(\(\)=>\{(\w)\.state==="idle"&&\2\(([^;{}]+?)\)\},'
+    r'\[(\6\.state(?:,[\w$]+)*)\]\);let (\w)=[\w$]+\(([^)]*)\);return!(\w)\.c'
 )
 
 
 def patched(src):
     def repl(m):
-        s, o, hook, active, eff, nav, let_var, fn_args, heading = m.groups()
+        s, o, hook, active, eff, nav, reset, deps, let_var, fn_args, heading = m.groups()
         keep_open = f'({heading}.level===1||{active})'
         return (
             f'[{s},{o}]={hook}.useState({keep_open});'
-            f'(0,{eff}.useEffect)(()=>{{{nav}.state==="idle"&&{o}({keep_open})}},'
-            f'[{nav}.state]);let {let_var}='
+            f'(0,{eff}.useEffect)(()=>{{{nav}.state==="idle"&&{o}(({heading}.level===1||{reset}))}},'
+            f'[{deps}]);let {let_var}='
             + m.group(0).split(f'let {let_var}=', 1)[1]
         )
 
     return PATTERN.subn(repl, src)
 
 
+def navigation_helpers(src):
+    """Resolve minified helpers from their use sites, not build-specific names."""
+    patterns = {
+        "NBC_JSX": r'\(0,([\w$]+)\.jsxs\)\("div",\{className:"myst-top-nav ',
+        "NBC_CONFIG": r'([\w$]+)\(\),\{title:[\w$]+,nav:[\w$]+,actions:',
+        "NBC_BASE": r'([\w$]+)\(\),[\w$]+=(?:\(0,[\w$]+\.useFetcher\)|[\w$]+)\(\),\[[\w$]+,[\w$]+\]=\(0,[\w$]+\.useState\)\(!0\)',
+        "NBC_URL": r'([\w$]+)\("/myst.search.json",[\w$]+\)',
+    }
+    helpers = {}
+    for name, pattern in patterns.items():
+        matches = set(re.findall(pattern, src))
+        if len(matches) != 1:
+            sys.exit(f"cannot uniquely resolve navigation helper {name}; theme changed?")
+        helpers[name] = matches.pop()
+    return helpers
+
+
 def patch_mobile_navigation():
     component = Path(HERE, "mobile_navigation.js").read_text()
-    helpers = [
-        {"NBC_JSX": "$p", "NBC_CONFIG": "py", "NBC_BASE": "pg", "NBC_URL": "Zm"},
-        {"NBC_JSX": "Tt", "NBC_CONFIG": "_r", "NBC_BASE": "si", "NBC_URL": "$t"},
-    ]
     button = re.compile(
         r'\(0,([\w$]+)\.jsxs\)\("button",\{className:"myst-top-nav-menu-button'
         r'.*?children:"Open Menu"\}\)\]\}\)'
     )
-    for path, symbols in zip(TARGETS, helpers):
+    for path in TARGETS:
         src = Path(path).read_text()
+        symbols = navigation_helpers(src)
         if "/*nbc-native-menu-start*/" not in src:
             src, count = button.subn(
                 lambda m: f'(0,{m[1]}.jsx)(nbcMobileNavigation,{{}})', src
