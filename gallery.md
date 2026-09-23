@@ -71,4 +71,9 @@ site:
 :class: nbc-gallery-image
 ```
 
+```{image} assets/gallery/not-microscopy/coyote.png
+:alt: Coyote
+:class: nbc-gallery-image
+```
+
 :::

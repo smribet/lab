@@ -58,26 +58,50 @@ Reach out to Stephanie to learn more about current openings for internships and 
 ## Postdoctoral Researchers
 
 :::::{div}
-:class: nbc-team-grid
+:class: nbc-team-profile-row
 
 ::::{div}
-:class: nbc-team-card
+:class: nbc-team-card nbc-team-profile-card
 
 ```{image} assets/people/Nick.jpg
 :alt: Nicholas Hagopian
 :class: nbc-team-photo
 ```
 
+:::{div}
+:class: nbc-team-links
+
+[LinkedIn](https://www.linkedin.com/in/nicholas-hagopian/) [Google Scholar](https://scholar.google.com/citations?user=SKepsOIAAAAJ&hl=en&authuser=1) [ORCID](https://orcid.org/0009-0000-9535-3279)
+
+:::
+
+::::
+
+::::{div}
+:class: nbc-team-profile-copy
+
 ### Nicholas Hagopian
 
 :::{div}
-:class: nbc-team-note
+:class: nbc-team-profile-bio
 
 **Contact:** nhagopian [at] lbl\.gov
 
 :::
 
+:::{div}
+:class: nbc-team-profile-bio
+
+**Bio:** Nicholas Hagopian received a Bachelor of Chemical Engineering and Bachelor of Science in Chemistry from the University of Minnesota in 2021. Hagopian completed his Ph.D. in the Department of Materials Science and Engineering at the University of Wisconsin Madison with Paul Voyles in 2026. His graduate research focused on high resolution STEM characterization and STEM technique development applied across a variety of materials systems including 2D transition metal dichalcogenides, Heusler alloy membranes, superconducting materials/devices for quantum computing, light emitting diodes, and metal/precipitate systems. In his final year he conducted research at LLNL and LBNL through the DOE SCGSR and Molecular Foundry (MF) user proposal programs. Hagopian joined the LBNL MF as a postdoctoral researcher in 2026. His research will continue to pursue STEM technique development towards materials characterization.
+
+:::
+
 ::::
+
+:::::
+
+:::::{div}
+:class: nbc-team-grid
 
 ::::{div}
 :class: nbc-team-card
@@ -111,10 +135,10 @@ Reach out to Stephanie to learn more about current openings for internships and 
 
 ## Graduate Students
 
-::::{div}
+:::::{div}
 :class: nbc-team-grid
 
-:::{div}
+::::{div}
 :class: nbc-team-card
 
 ```{image} assets/people/Madelyn.jpg
@@ -124,9 +148,16 @@ Reach out to Stephanie to learn more about current openings for internships and 
 
 ### Madelyn Payne
 
+:::{div}
+:class: nbc-team-note
+
+UC Berkeley graduate student in Minor and Asta groups working on Genesis project
+
 :::
 
-:::{div}
+::::
+
+::::{div}
 :class: nbc-team-card
 
 ```{image} assets/people/Dongin.jpg
@@ -136,9 +167,16 @@ Reach out to Stephanie to learn more about current openings for internships and 
 
 ### Dongin Jung
 
+:::{div}
+:class: nbc-team-note
+
+UC Berkeley graduate student in Minor and Asta groups working on Genesis project
+
 :::
 
 ::::
+
+:::::
 
 ---
 
