@@ -24,10 +24,37 @@ THEME = os.path.normpath(
     os.path.join(HERE, "..", "_build", "templates", "site", "myst", "book-theme")
 )
 
-TARGETS = [
-    os.path.join(THEME, "build", "index.js"),
-    os.path.join(THEME, "public", "build", "_shared", "chunk-RUUCG5OS.js"),
-]
+TARGETS = []  # Resolved from the downloaded template in main().
+
+
+def stock_asset(pub, prefix):
+    """Find a fingerprinted upstream asset, excluding our generated copies."""
+    candidates = sorted(
+        p for p in pub.glob(f"{prefix}-*.js")
+        if "-nbc-" not in p.name and not p.name.startswith(f"{prefix}-NBCRT")
+    )
+    if len(candidates) != 1:
+        sys.exit(
+            f"expected one {prefix} bundle in {pub}, found {len(candidates)}; "
+            "clear the downloaded template and run `myst build` again"
+        )
+    return candidates[0]
+
+
+def theme_targets():
+    shared = Path(THEME, "public", "build", "_shared")
+    candidates = []
+    for path in sorted(shared.glob("*.js")):
+        if "-nbc-" in path.name:
+            continue
+        src = path.read_text()
+        if ('myst-top-nav-menu-button' in src or '/*nbc-native-menu-start*/' in src) and (
+            PATTERN.search(src) or '.level===1||' in src
+        ):
+            candidates.append(path)
+    if len(candidates) != 1:
+        sys.exit("navigation bundle not uniquely identified; theme version changed?")
+    return [str(Path(THEME, "build", "index.js")), str(candidates[0])]
 
 # Flat top-bar search runtime (replaces the theme's dialog search).
 # Injected into the server-rendered HTML. The search index path is
@@ -273,7 +300,7 @@ def cache_bust_navigation():
         p.name: (p, p.read_text()) for p in pub.rglob("*.js")
         if "-nbc-" not in p.name
     }
-    changed = {"chunk-RUUCG5OS.js", "entry.client-NBCRT2.js"}
+    changed = {Path(TARGETS[1]).name, "entry.client-NBCRT2.js"}
     version = hashlib.sha256(
         (INLINER + ''.join(sources[name][1] for name in sorted(changed))).encode()
     ).hexdigest()[:12]
@@ -302,8 +329,13 @@ def cache_bust_navigation():
 
 
 def main():
+    global TARGETS
     if not os.path.isdir(THEME):
         sys.exit("book-theme template not found; run `myst build` first")
+    TARGETS = theme_targets()
+    pub = Path(THEME, "public", "build")
+    rename = [(stock_asset(pub, "entry.client").stem, "entry.client-NBCRT2"),
+              (stock_asset(pub, "manifest").stem, "manifest-NBCRT2")]
     total = 0
     # dev server: drop the 1-year immutable cache so patched bundles reload
     server_js = os.path.join(THEME, "server.js")
@@ -355,8 +387,6 @@ def main():
         print(f"patched build/index.js (search runtime, {n} site)")
     # rename the patched entry + manifest so browsers that cached the stock
     # bundles (1-year immutable) fetch the patched versions
-    rename = [("entry.client-PCJPW7TK", "entry.client-NBCRT2"),
-              ("manifest-C732C875", "manifest-NBCRT2")]
     pub = os.path.join(THEME, "public", "build")
     if not os.path.exists(os.path.join(pub, "entry.client-NBCRT2.js")):
         import shutil
