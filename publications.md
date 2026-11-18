@@ -10,6 +10,7 @@ title: Publications and Patents
 
 **2026**
 
+- C. Ophus, A. R. C. McCray, G. Varnavides, S. M. Ribet, “quantEM: Quantitative Electron Microscopy Analysis from Differentiable Physics to Neural Priors,” [*arXiv*](https://doi.org/10.48550/arXiv.2611.21903), 2611.21903, 2026.
 - S. M. Ribet, M. Danaie, W. P. M. de Kleijne, A. R. C. McCray, F. Allars, C. S. Allen, C. Ophus, G. Varnavides, “Real-space overlap is not enough: ambiguity in nanobeam iterative ptychography,” [*arXiv*](https://doi.org/10.48550/arXiv.2608.30359), 2608.30359, 2026.
 - M. Palos, L. Spillane, G. Topore, Y. Li, D. Pesquera, C. Ophus, S. M. Ribet, M. S. Conroy, “Programmable Beam Control for Electron Energy-Loss Spectroscopy and Ptychography,” [*Microsc. Microanal.*](https://doi.org/10.1093/mam/ozag080), 32(4), 2026.
 - G. Varnavides, W. P. M. de Kleijne, S. M. Ribet, “The ABCs of phase retrieval: Connecting the acronyms of scanning transmission electron microscopy,” [*MRS Bulletin*](https://doi.org/10.1557/s43577-026-01100-3), 51, 2026.
@@ -41,6 +42,7 @@ title: Publications and Patents
 - A. R. C. McCray, S. M. Ribet, G. Varnavides, C. Ophus, “Accelerating iterative ptychography with an integrated neural network,” [*J. Microsc.*](https://doi.org/10.1111/jmi.13407), 2025.
 - S. Husremović, O. Gonzalez, B. H. Goodge, L. S. Xie, Z. Kong, W. Zhang, S. H. Ryu, S. M. Ribet, S. S. Fender, K. C. Bustillo, C. Song, J. Ciston, T. Taniguchi, K. Watanabe, C. Ophus, C. Jozwiak, A. Bostwick, E. Rotenberg, D. K. Bediako, “Tailored topotactic chemistry unlocks heterostructures of magnetic intercalation compounds,” [*Nat. Commun.*](https://doi.org/10.1038/s41467-025-56467-9), 16(1208), 2025.
 - S. S. Welborn, C. Harris, S. M. Ribet, G. Varnavides, C. Ophus, B. Enders, P. Ercius, “Streaming large-scale electron microscopy data to a supercomputing facility,” [*Microsc. Microanal.*](https://doi.org/10.1093/mam/ozae109), 31(1), 2025.
+
 **2024**
 
 - G. Varnavides, S. M. Ribet, C. Ophus, “Tilt-Corrected BF-STEM,” [*Elemental Microscopy*](https://www.elementalmicroscopy.com/articles/EM000002), 2024.

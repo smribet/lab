@@ -51,7 +51,7 @@ title: Open-Source Code
 
 **quantEM** is a quantitative electron microscopy data analysis toolkit built on PyTorch. It brings together tools for reconstructing or analyzing a wide range of transmission electron microscopy (TEM) techniques, including nanobeam diffraction, phase retrieval, real-space imaging and tomography, spectroscopy, and related analyses within a consistent, GPU-accelerated API.
 
-**Links:** [Source code](https://github.com/electronmicroscopy/quantem) · [Tutorials](https://github.com/electronmicroscopy/quantem-tutorials)
+**Links:** [Source code](https://github.com/electronmicroscopy/quantem) · [Tutorials](https://github.com/electronmicroscopy/quantem-tutorials) · [Paper](https://doi.org/10.48550/arXiv.2611.21903)
 
 :::
 
