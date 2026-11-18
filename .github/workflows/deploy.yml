@@ -25,10 +25,6 @@ jobs:
           package-manager-cache: false
       - name: Install MyST
         run: npm install -g mystmd
-      - name: Fetch the site template
-        run: myst build
-      - name: Patch theme (flat search, expanded TOC sections)
-        run: python3 scripts/patch_theme.py
       - name: Build site
         run: myst build --html
         env:

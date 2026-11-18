@@ -8,13 +8,9 @@ The site is built with [MyST Markdown](https://mystmd.org/):
 
 ```bash
 npm install -g mystmd   # or: pip install mystmd
-myst build
-python3 scripts/patch_theme.py
 myst start              # local development server
 myst build --html       # static site in _build/html
 ```
-
-Reapply `scripts/patch_theme.py` whenever `_build/` is deleted or the MyST theme is refreshed.
 
 ## Deployment
 
